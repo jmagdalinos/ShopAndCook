@@ -1,0 +1,199 @@
+<resources>
+    <string name="app_name">Shop &amp; Cook</string>
+
+    <!-- Main Activity Titles -->
+    <string name="main_shopping_list">Shopping List</string>
+    <string name="main_meal_planner">Meal Planner</string>
+    <string name="main_recipes">Recipes</string>
+    <string name="main_meals">Meals</string>
+    <string name="main_recipe_ideas">Recipe Ideas!</string>
+    <string name="main_sign_out">Sign out</string>
+
+    <!--Ingredient List Header -->
+    <string name="ingredient_list_header_name">Name</string>
+    <string name="ingredient_list_header_quantity">Quantity</string>
+    <string name="ingredient_list_header_measure">Measure</string>
+    <string name="ingredient_list_header_notes">Notes</string>
+
+    <!-- Ingredient List Item -->
+    <string name="ingredient_list_item_hint_name">Onions</string>
+    <string name="ingredient_list_item_hint_quantity">2</string>
+    <string name="ingredient_list_item_hint_measure">kgs</string>
+    <string name="ingredient_list_item_hint_comments">chopped</string>
+
+    <!-- Recipe -->
+    <string name="recipe_description">Description:</string>
+    <string name="recipe_name_hint">Recipe Name</string>
+    <string name="recipe_servings_hint">Servings</string>
+    <string name="recipe_meals_hint">Meals</string>
+    <string name="recipe_recipes_hint">Recipes</string>
+    <string name="recipe_prep_time_hint">Preparation time</string>
+    <string name="recipe_description_hint">Description</string>
+    <string name="recipe_tags_hint">Tags</string>
+
+    <!-- Recipe titles -->
+    <string name="recipe_ingredients_title">Ingredients:</string>
+    <string name="recipe_button_web">Go to recipe website</string>
+    <string name="recipe_button_add_ingredient">Add ingredient</string>
+
+    <!-- Recipe List Item -->
+    <string name="recipe_list_item_hint_name">Pasta ala Carbonara</string>
+    <string name="recipe_list_item_hint_servings">4</string>
+    <string name="recipe_list_item_hint_tags">Festive</string>
+    <string name="recipe_list_item_hint_description">Pasta with eggs, cheese and bacon.
+        Originating from Rome, it is cooked with many variations all across Italy.</string>
+
+    <!-- RecipeFromApi List Item -->
+    <string name="recipe_list_item_no_thumbnail">NO IMAGE\nAVAILABLE</string>
+    <string name="api_attribution">Powered By Food2Fork.com</string>
+
+    <!-- Meal List Item -->
+    <string name="meal_list_item_delete">Delete</string>
+    <string name="meal_list_item_hint_name">Meal name</string>
+
+    <!-- Meal titles -->
+    <string name="meal_button_add_recipe">Add recipe</string>
+    <string name="meal_button_add_new_recipe">Add new recipe</string>
+    <string name="meal_button_add_new_meal">Add new meal</string>
+    <string name="meal_button_remove_meal">Remove current meal</string>
+
+    <!-- Day titles -->
+    <string name="day_breakfast_title">Breakfast</string>
+    <string name="day_morning_snack_title">Morning Snack</string>
+    <string name="day_lunch_title">Lunch</string>
+    <string name="day_afternoon_snack_title">Afternoon Snack</string>
+    <string name="day_dinner_title">Dinner</string>
+    <string name="day_add_meal">Press to add or view a meal</string>
+
+    <!-- Day placeholders -->
+    <string name="day_breakfast_placeholder">Cornflakes and coffee</string>
+    <string name="day_morning_snack_placeholder">Carrot juice and nuts</string>
+    <string name="day_lunch_placeholder">Green salad and bread</string>
+    <string name="day_afternoon_snack_placeholder">Banana</string>
+    <string name="day_dinner_placeholder">Pizza and Beer</string>
+
+    <!-- Menu Items -->
+    <string name="action_search">Search…</string>
+    <string name="action_clear">Delete all</string>
+    <string name="action_add_shopping_item">Add shopping ingredient</string>
+    <string name="action_add_recipe">Add recipe</string>
+    <string name="action_recipe_edit">Edit</string>
+    <string name="action_sort_by_name">Sort by name</string>
+    <string name="action_sort_by_tags">Sort by tags</string>
+    <string name="action_sort_by_color">Sort by color</string>
+    <string name="action_toggle_color">Toggle color</string>
+    <string name="action_share">Share</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_clear_day">Clear day</string>
+    <string name="action_clear_week">Clear week</string>
+    <string name="action_add_day_shopping">Add day\'s shopping to list</string>
+    <string name="action_add_week_shopping">Add week\'s shopping to list</string>
+
+    <!-- Toast messages -->
+    <string name="sign_in">Sign in successful.\nWelcome to Shop &amp; Cook!</string>
+    <string name="add_ingredient_name">Please add an ingredient name</string>
+    <string name="add_recipe_name">Please add a recipe name</string>
+    <string name="add_meal_name">Please add a meal name</string>
+
+    <!-- SnackBar messages -->
+    <string name="snackbar_delete_recipe">1 recipe deleted!</string>
+    <string name="snackbar_delete_meal">1 meal deleted!</string>
+    <string name="snackbar_undo">Undo</string>
+
+    <!-- General messages -->
+    <string name="no_internet">No Internet Connection. \nPlease try again</string>
+    <string name="no_data">No recipes to display \nTry searching for one!</string>
+    <string name="error">Oops! Something went wrong! \nPlease try again later</string>
+
+    <!-- Dialog strings -->
+    <string name="dialog_save">Save</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_title_sign_out_title">Sign out</string>
+    <string name="dialog_title_sign_out">Are you sure you want to sign out?</string>
+    <string name="dialog_title_edit_ingredient">Edit Ingredient</string>
+    <string name="dialog_title_create_ingredient">Create Ingredient</string>
+    <string name="dialog_title_edit_shopping_item">Edit shopping item</string>
+    <string name="dialog_title_create_shopping_item">Create shopping item</string>
+    <string name="dialog_title_select_recipes">Select Recipe</string>
+    <string name="dialog_title_select_meal">Select Meal</string>
+    <string name="dialog_color_picker_title">Select color</string>
+    <string name="dialog_clear_shopping_list_title">Clear shopping list</string>
+    <string name="dialog_clear_recipes_title">Delete all recipes</string>
+    <string name="dialog_clear_meals_title">Delete all meals</string>
+    <string name="dialog_clear_shopping_list">Are you sure you want to clear the shopping
+        list?</string>
+    <string name="dialog_clear_recipes">Are you sure you want to delete all recipes?</string>
+    <string name="dialog_clear_meals">Are you sure you want to delete all meals?</string>
+    <string name="dialog_buy_paid_title">Option not available</string>
+    <string name="dialog_buy_paid">Please purchase full version to enable this option</string>
+
+    <!-- Days of the week -->
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+
+    <!-- Messages for sharing -->
+    <string name="share_meal_title">Meal of the day:</string>
+    <string name="share_meal_with">with</string>
+    <string name="share_meal_and">and</string>
+    <string name="share_recipe_title">Recipe of the day:</string>
+
+    <!-- Measure spinner items singulars -->
+    <string name="measure_0">kg</string>
+    <string name="measure_1">gr</string>
+    <string name="measure_2">oz</string>
+    <string name="measure_3">ml</string>
+    <string name="measure_4">lt</string>
+    <string name="measure_5">cup</string>
+    <string name="measure_6">tsp</string>
+    <string name="measure_7">tbsp</string>
+    <string name="measure_8">gallon</string>
+    <string name="measure_9">ounce</string>
+    <string name="measure_10">item</string>
+    <string name="measure_11">pack</string>
+    <string name="measure_12">bottle</string>
+
+    <!-- Measure spinner items singulars -->
+    <string name="measure_0_plural">kgs</string>
+    <string name="measure_1_plural">grs</string>
+    <string name="measure_2_plural">oz</string>
+    <string name="measure_3_plural">mls</string>
+    <string name="measure_4_plural">lts</string>
+    <string name="measure_5_plural">cups</string>
+    <string name="measure_6_plural">tsps</string>
+    <string name="measure_7_plural">tbsps</string>
+    <string name="measure_8_plural">gallons</string>
+    <string name="measure_9_plural">ounces</string>
+    <string name="measure_10_plural">items</string>
+    <string name="measure_11_plural">packs</string>
+    <string name="measure_12_plural">bottles</string>
+
+    <!-- AppWidgets -->
+    <string name="widget_day_no_meal">No meal set</string>
+    <string name="widget_sign_in">No data. Please sign in</string>
+
+    <!-- Content Description -->
+    <string name="content_description_border_up">Top border</string>
+    <string name="content_description_border_down">Bottom border</string>
+    <string name="content_description_grid_h">Horizontal grid</string>
+    <string name="content_description_grid_v">Vertical grid</string>
+    <string name="content_description_chkbx">Check box</string>
+    <string name="content_description_color_green">Green tag</string>
+    <string name="content_description_color_yellow">Yellow tag</string>
+    <string name="content_description_color_purple">Purple tag</string>
+    <string name="content_description_color_blue">Blue tag</string>
+    <string name="content_description_color_red">Red tag</string>
+    <string name="content_description_color_grey">Grey tag</string>
+    <string name="content_description_notebook_hole">Notebook hole</string>
+    <string name="content_description_recipe_image">Recipe Image</string>
+    <string name="content_description_website">Go to food2fork website</string>
+    <string name="content_description_prep_time_edit">Change preparation time</string>
+    <string name="content_description_recipe_rating">Recipe rating</string>
+    <string name="content_description_recipe_color">Color tag</string>
+</resources>

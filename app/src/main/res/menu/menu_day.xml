@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_day_add_shopping"
+        android:title="@string/action_add_day_shopping"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_week_add_shopping"
+        android:title="@string/action_add_week_shopping"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_day_clear"
+        android:title="@string/action_clear_day"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_week_clear"
+        android:title="@string/action_clear_week"
+        app:showAsAction="never"/>
+</menu>

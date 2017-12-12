@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <size
+        android:width="@dimen/ingredient_edit_color_picker_size"
+        android:height="@dimen/ingredient_edit_color_picker_size"/>
+
+    <solid
+        android:color="@color/ingredientType2"/>
+</shape>

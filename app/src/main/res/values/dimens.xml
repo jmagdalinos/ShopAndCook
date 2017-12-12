@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar dimensions -->
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <!-- Border dimensions -->
+    <dimen name="border_height">60dp</dimen>
+    <dimen name="border_margin_top">30dp</dimen>
+    <dimen name="border_margin_bottom">20dp</dimen>
+
+    <!-- Main Fragment -->
+    <dimen name="main_fragment_text_size">24sp</dimen>
+    <dimen name="main_fragment_image_height">200dp</dimen>
+    <dimen name="main_fragment_text_padding">8dp</dimen>
+
+    <!-- Recipe List Item from API -->
+    <dimen name="api_list_item_image_size">100dp</dimen>
+    <dimen name="api_list_item_rank_circle_size">48dp</dimen>
+    <dimen name="api_list_item_no_thumbnail_text">8sp</dimen>
+    <dimen name="api_list_item_text">16sp</dimen>
+    <dimen name="api_list_item_text_margin">16dp</dimen>
+    <dimen name="api_list_item_card_view_margin">4dp</dimen>
+
+    <!-- Ingredient List Item -->
+    <dimen name="ingredient_list_item_padding">8dp</dimen>
+    <dimen name="ingredient_list_item_text_margin">4dp</dimen>
+    <dimen name="ingredient_list_item_color_circle_size">24dp</dimen>
+    <dimen name="ingredient_list_item_text_size">16sp</dimen>
+
+    <!-- Ingredient List Header -->
+    <dimen name="shopping_list_list_header_margin">36dp</dimen>
+    <dimen name="shopping_list_list_header_text_size">24sp</dimen>
+    <dimen name="shopping_list_divider_padding">4dp</dimen>
+
+    <!-- Ingredient Edit Dialog -->
+    <dimen name="ingredient_edit_color_picker_size">36dp</dimen>
+    <dimen name="ingredient_edit_color_picker_background_size">56dp</dimen>
+
+    <!-- List Item -->
+    <dimen name="list_item_title">24sp</dimen>
+    <dimen name="list_item_title_small">20sp</dimen>
+    <dimen name="list_item_description">16sp</dimen>
+    <dimen name="list_item_subtitle">12sp</dimen>
+    <dimen name="list_item_margin_small">4dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+    <dimen name="list_item_icon_size">24dp</dimen>
+    <dimen name="list_item_icon_margin">8dp</dimen>
+
+    <!-- Banners -->
+    <dimen name="banner_large_padding">16dp</dimen>
+    <dimen name="banner_medium_padding">8dp</dimen>
+    <dimen name="banner_small_padding">4dp</dimen>
+
+    <!-- Recipe & Meal dimensions -->
+    <dimen name="single_item_titles">34sp</dimen>
+    <dimen name="single_item_padding">16dp</dimen>
+    <dimen name="icon_margin_start">64dp</dimen>
+    <dimen name="icon_margin_end">16dp</dimen>
+    <dimen name="small_icon_margin_start">88dp</dimen>
+    <dimen name="recipe_text_size">20sp</dimen>
+    <dimen name="recipe_divider_padding">8dp</dimen>
+
+    <!-- Dialogs -->
+    <dimen name="dialog_title_text_size">18sp</dimen>
+    <dimen name="dialog_edit_text_size">16sp</dimen>
+    <dimen name="dialog_text_margin_inner">16dp</dimen>
+    <dimen name="dialog_text_margin_outer">64dp</dimen>
+    <dimen name="dialog_select_color_text_size">20sp</dimen>
+    <dimen name="dialog_select_color_margin">32dp</dimen>
+
+    <!-- Day -->
+    <dimen name="day_title_margin_inner">16dp</dimen>
+    <dimen name="day_margin_outer">32dp</dimen>
+    <dimen name="day_margin_start">64dp</dimen>
+    <dimen name="day_margin_end">16dp</dimen>
+    <dimen name="day_title_textSize">20sp</dimen>
+    <dimen name="day_meal_textSize">14sp</dimen>
+    <dimen name="day_meal_vertical_grid">2dp</dimen>
+    <dimen name="day_meal_horizontal_grid">1dp</dimen>
+    <dimen name="day_meal_margin_grid">8dp</dimen>
+    <dimen name="day_circle_size">24dp</dimen>
+
+    <!-- AppWidgets -->
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="day_widget_title_padding_end">8dp</dimen>
+    <dimen name="day_widget_title_padding_start">24dp</dimen>
+    <dimen name="day_widget_divider_padding_start">20dp</dimen>
+    <dimen name="day_widget_title_textSize">14sp</dimen>
+    <dimen name="day_widget_textSize">12sp</dimen>
+</resources>

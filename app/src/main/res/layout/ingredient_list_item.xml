@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (C) 2017 John Magdalinos
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   	http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License. -->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_ingredient_background_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/deletedBackground">
+
+        <ImageView
+            android:id="@+id/iv_ingredient_deleted_icon_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/ingredient_list_item_padding"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/meal_list_item_delete"
+            android:src="@drawable/ic_delete_24dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ingredient_background_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/deletedBackground">
+
+        <ImageView
+            android:id="@+id/iv_ingredient_deleted_icon_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/ingredient_list_item_padding"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/meal_list_item_delete"
+            android:src="@drawable/ic_delete_24dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_ingredient_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/recipeRowColor"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_ingredient_list_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            tools:hint="@string/ingredient_list_item_hint_name"
+            style="@style/list_item_ingredient"/>
+
+        <TextView
+            android:id="@+id/tv_ingredient_list_item_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            tools:hint="@string/ingredient_list_item_hint_quantity"
+            style="@style/list_item_ingredient"/>
+
+        <TextView
+            android:id="@+id/tv_ingredient_list_item_measure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/ingredient_list_item_hint_measure"
+            style="@style/list_item_ingredient"/>
+
+        <TextView
+            android:id="@+id/tv_ingredient_list_item_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/ingredient_list_item_text_size"
+            tools:hint="@string/ingredient_list_item_hint_comments"
+            android:visibility="gone"
+            style="@style/list_item_ingredient"/>
+    </LinearLayout>
+</FrameLayout>

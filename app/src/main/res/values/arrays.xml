@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="days_of_the_week">
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+        <item>@string/saturday</item>
+        <item>@string/sunday</item>
+    </string-array>
+    
+    <string-array name="measure_spinner_singular">
+        <item>@string/measure_0</item>
+        <item>@string/measure_1</item>
+        <item>@string/measure_2</item>
+        <item>@string/measure_3</item>
+        <item>@string/measure_4</item>
+        <item>@string/measure_5</item>
+        <item>@string/measure_6</item>
+        <item>@string/measure_7</item>
+        <item>@string/measure_8</item>
+        <item>@string/measure_9</item>
+        <item>@string/measure_10</item>
+        <item>@string/measure_11</item>
+        <item>@string/measure_12</item>
+    </string-array>
+
+    <string-array name="measure_spinner_plural">
+        <item>@string/measure_0_plural</item>
+        <item>@string/measure_1_plural</item>
+        <item>@string/measure_2_plural</item>
+        <item>@string/measure_3_plural</item>
+        <item>@string/measure_4_plural</item>
+        <item>@string/measure_5_plural</item>
+        <item>@string/measure_6_plural</item>
+        <item>@string/measure_7_plural</item>
+        <item>@string/measure_8_plural</item>
+        <item>@string/measure_9_plural</item>
+        <item>@string/measure_10_plural</item>
+        <item>@string/measure_11_plural</item>
+        <item>@string/measure_12_plural</item>
+    </string-array>
+</resources>

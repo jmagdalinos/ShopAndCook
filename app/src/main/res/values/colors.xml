@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Theme Colors -->
+    <color name="colorPrimary">#BA6363</color>
+    <color name="colorPrimaryDark">#833434</color>
+    <color name="colorAccent">#993131</color>
+    <color name="colorBanner">#424242</color>
+    <color name="dayBackground">#EFE1A5</color>
+    <color name="snackBarTextColor">#FF9800</color>
+
+    <!-- RecipeFromApi List Item Gradient Colors -->
+    <color name="colorGradientStart">#212121</color>
+    <color name="colorGradientEnd">#424242</color>
+
+    <!-- RecipeFromApi List Item Text -->
+    <color name="colorTextNoThumbnail">#EEEEEE</color>
+
+    <!-- Ingredient List Item background -->
+    <color name="deletedBackground">#E08B8B</color>
+    <color name="unCheckedBackground">#FFFFFF</color>
+
+    <!-- Color Range for Ingredient types -->
+    <color name="ingredientType0">#AED581</color>
+    <color name="ingredientType1">#FFF176</color>
+    <color name="ingredientType2">#BA68C8</color>
+    <color name="ingredientType3">#64B5F6</color>
+    <color name="ingredientType4">#E57373</color>
+    <color name="ingredientType5">#BCAAA4</color>
+
+    <!-- Color Range RecipeFromApi Rating -->
+    <color name="rating20">#C62828</color>
+    <color name="rating40">#E65100</color>
+    <color name="rating60">#0097A7</color>
+    <color name="rating80">#00897B</color>
+    <color name="rating100">#388E3C</color>
+
+    <!-- Recipe / Meal colors -->
+    <color name="recipeRowColor">#fcecec</color>
+    <color name="recipeTextColor">#424242</color>
+
+    <!-- Day colors -->
+    <color name="dayGridColor">#BDBDBD</color>
+    <color name="dayCircle">#BDBDBD</color>
+    <color name="dayCircleIn">#EEEEEE</color>
+</resources>

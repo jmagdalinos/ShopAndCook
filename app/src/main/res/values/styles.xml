@@ -1,0 +1,204 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.detail" parent="AppTheme">
+
+    </style>
+
+    <!-- Text style for the text in the Main Fragment CardsViews -->
+    <style name="main_fragment_text">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/main_fragment_text_size</item>
+        <item name="android:padding">@dimen/main_fragment_text_padding</item>
+        <item name="android:background">#af000000</item>
+    </style>
+
+    <!-- Text style for day titles -->
+    <style name="day_fragment_meal_titles">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">@dimen/day_title_margin_inner</item>
+        <item name="android:layout_marginBottom">@dimen/day_title_margin_inner</item>
+        <item name="android:layout_marginStart">@dimen/day_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/day_margin_end</item>
+        <item name="android:textSize">@dimen/day_title_textSize</item>
+    </style>
+
+    <!-- Text style for day meals -->
+    <style name="day_fragment_meal">
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:layout_marginStart">@dimen/day_margin_start</item>
+        <item name="android:layout_marginEnd">@dimen/day_margin_end</item>
+        <item name="android:layout_marginTop">@dimen/day_title_margin_inner</item>
+        <item name="android:layout_marginBottom">@dimen/day_title_margin_inner</item>
+        <item name="android:text">@string/day_add_meal</item>
+        <item name="android:textSize">@dimen/day_meal_textSize</item>
+    </style>
+
+    <!-- Dividers for day meals -->
+    <style name="day_vertical_divider">
+        <item name="android:background">@color/dayGridColor</item>
+        <item name="android:layout_marginEnd">@dimen/day_meal_margin_grid</item>
+    </style>
+
+    <style name="day_horizontal_divider">
+        <item name="android:background">@color/dayGridColor</item>
+        <item name="android:layout_marginBottom">@dimen/day_meal_margin_grid</item>
+    </style>
+
+    <!-- List item styles -->
+    <style name="list_item_title">
+        <item name="android:textSize">@dimen/list_item_title</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="list_item_subtitle">
+        <item name="android:textSize">@dimen/list_item_subtitle</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+    </style>
+
+    <style name="list_item_description">
+        <item name="android:textSize">@dimen/list_item_description</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="list_item_tags">
+        <item name="android:textSize">@dimen/list_item_subtitle</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="list_item_ingredient">
+        <item name="android:layout_marginEnd">@dimen/ingredient_list_item_text_margin</item>
+        <item name="android:textSize">@dimen/ingredient_list_item_text_size</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+    </style>
+
+    <!-- Banners -->
+    <style name="text_banner">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_banner.large" parent="text_banner">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/list_item_title</item>
+        <item name="android:padding">@dimen/banner_medium_padding</item>
+    </style>
+
+    <style name="text_banner.large.color" parent="text_banner.large">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="text_banner.small" parent="text_banner">
+        <item name="android:background">@color/colorBanner</item>
+        <item name="android:textSize">@dimen/list_item_subtitle</item>
+        <item name="android:padding">@dimen/banner_small_padding</item>
+    </style>
+
+    <!-- Recipe & Meal styles -->
+    <style name="recipe_titles">
+        <item name="android:layout_marginTop">@dimen/border_margin_top</item>
+        <item name="android:paddingStart">@dimen/single_item_padding</item>
+        <item name="android:textSize">@dimen/single_item_titles</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:padding">@dimen/banner_medium_padding</item>
+        <item name="android:inputType">textCapSentences</item>
+    </style>
+
+    <style name="recipe_divider">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_marginStart">@dimen/recipe_divider_padding</item>
+        <item name="android:layout_marginEnd">@dimen/recipe_divider_padding</item>
+    </style>
+
+    <style name="recipe_row_background">
+        <item name="android:paddingEnd">@dimen/banner_large_padding</item>
+        <item name="android:background">@color/unCheckedBackground</item>
+    </style>
+
+    <style name="recipe_row_background.color" parent="recipe_row_background">
+        <item name="android:background">@color/recipeRowColor</item>
+    </style>
+
+    <style name="recipe_icons">
+        <item name="android:paddingTop">@dimen/banner_medium_padding</item>
+        <item name="android:paddingBottom">@dimen/banner_medium_padding</item>
+        <item name="android:layout_marginStart">@dimen/icon_margin_start</item>
+        <item name="android:layout_gravity">top|right</item>
+    </style>
+
+    <style name="recipe_edit_text">
+        <item name="android:paddingTop">@dimen/banner_medium_padding</item>
+        <item name="android:paddingBottom">@dimen/banner_medium_padding</item>
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:textSize">@dimen/recipe_text_size</item>
+        <item name="android:inputType">textCapSentences</item>
+    </style>
+
+    <style name="recipe_text">
+        <item name="android:paddingTop">@dimen/banner_medium_padding</item>
+        <item name="android:paddingBottom">@dimen/banner_medium_padding</item>
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:textSize">@dimen/recipe_text_size</item>
+    </style>
+    
+    <!-- Dialogs -->
+    <style name="dialog_title">
+        <item name="android:textSize">@dimen/dialog_title_text_size</item>
+        <item name="android:layout_marginEnd">@dimen/dialog_text_margin_inner</item>
+        <item name="android:layout_marginStart">@dimen/dialog_text_margin_outer</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+    </style>
+
+    <style name="dialog_edit_text">
+        <item name="android:textSize">@dimen/dialog_edit_text_size</item>
+        <item name="android:layout_marginStart">@dimen/dialog_text_margin_inner</item>
+        <item name="android:layout_marginEnd">@dimen/dialog_text_margin_outer</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+    </style>
+
+    <style name="dialog_select_color_title">
+        <item name="android:textSize">@dimen/dialog_select_color_text_size</item>
+        <item name="android:layout_marginTop">@dimen/dialog_select_color_margin</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Widgets -->
+    <style name="day_widget_meal_titles">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingStart">@dimen/day_widget_title_padding_start</item>
+        <item name="android:paddingEnd">@dimen/day_widget_title_padding_end</item>
+        <item name="android:textSize">@dimen/day_widget_title_textSize</item>
+    </style>
+
+    <!-- Text style for day meals widget -->
+    <style name="day_widget_meal">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/recipeTextColor</item>
+        <item name="android:paddingStart">@dimen/day_widget_title_padding_start</item>
+        <item name="android:paddingEnd">@dimen/day_widget_title_padding_end</item>
+        <item name="android:text">@string/day_add_meal</item>
+        <item name="android:textSize">@dimen/day_widget_textSize</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/ll_meal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_meal_name"
+                style="@style/recipe_titles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@string/meal_list_item_hint_name"
+                tools:text="Meal Name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_meal_servings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="@style/recipe_row_background.color">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_servings"
+                android:contentDescription="@string/recipe_servings_hint"
+                style="@style/recipe_icons"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                style="@style/recipe_divider"/>
+
+            <EditText
+                android:id="@+id/et_meal_servings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                tools:text="2"
+                android:labelFor="@string/recipe_servings_hint"
+                style="@style/recipe_edit_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_meal_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="@style/recipe_row_background">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_recipes"
+                android:contentDescription="@string/recipe_meals_hint"
+                style="@style/recipe_icons"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                style="@style/recipe_divider"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_meal_recipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_meal_recipes_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/recipe_row_background">
+
+            <ImageView
+                android:id="@+id/img_recipe_add_ingredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:src="@drawable/ic_add_red_24dp"
+                style="@style/recipe_icons"
+                android:contentDescription="@string/action_add_recipe"
+                android:layout_marginStart="@dimen/small_icon_margin_start"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                style="@style/recipe_divider"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meal_button_add_recipe"
+                style="@style/recipe_edit_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_meal_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="@style/recipe_row_background.color">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_description"
+                android:contentDescription="@string/recipe_description_hint"
+                style="@style/recipe_icons"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                style="@style/recipe_divider"/>
+
+            <EditText
+                android:id="@+id/et_meal_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Description"
+                android:labelFor="@string/recipe_description_hint"
+                style="@style/recipe_edit_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_meal_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/border_margin_top"
+            style="@style/recipe_row_background">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icons_tags"
+                android:contentDescription="@string/recipe_tags_hint"
+                style="@style/recipe_icons"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                style="@style/recipe_divider"/>
+
+            <EditText
+                android:id="@+id/et_meal_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Recipe tags"
+                android:labelFor="@string/recipe_tags_hint"
+                style="@style/recipe_edit_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

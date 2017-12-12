@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (C) 2017 John Magdalinos
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   	http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License. -->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_widget_day_title"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:background="@color/dayBackground">
+
+    <ImageView
+        android:layout_width="@dimen/day_meal_vertical_grid"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/day_widget_divider_padding_start"
+        android:contentDescription="@string/content_description_grid_v"
+        android:background="@color/dayGridColor"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_widget_day_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"
+            tools:text="Monday"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_dinner_title"
+            style="@style/day_widget_meal_titles"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_breakfast_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_breakfast_title"
+            style="@style/day_widget_meal_titles"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_breakfast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/day_breakfast_placeholder"
+            style="@style/day_widget_meal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_morning_snack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_morning_snack_title"
+            style="@style/day_widget_meal_titles"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_morning_snack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/day_morning_snack_placeholder"
+            style="@style/day_widget_meal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_lunch_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_lunch_title"
+            style="@style/day_widget_meal_titles"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_lunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/day_lunch_placeholder"
+            style="@style/day_widget_meal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_afternoon_snack_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_afternoon_snack_title"
+            style="@style/day_widget_meal_titles"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_afternoon_snack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/day_afternoon_snack_placeholder"
+            style="@style/day_widget_meal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_dinner_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_dinner_title"
+            style="@style/day_widget_meal_titles"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:id="@+id/tv_widget_day_dinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/day_dinner_placeholder"
+            style="@style/day_widget_meal"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/day_meal_horizontal_grid"
+            android:contentDescription="@string/content_description_grid_h"
+            android:background="@color/dayGridColor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_dinner_title"
+            style="@style/day_widget_meal_titles"
+            android:visibility="invisible"/>
+    </LinearLayout>
+</FrameLayout>

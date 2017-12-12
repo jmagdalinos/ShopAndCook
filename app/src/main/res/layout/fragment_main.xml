@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.shopandcook.ui.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_shopping_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/shopping_list"
+                android:contentDescription="@string/main_shopping_list"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_shopping_list"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_meal_planner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/meal_planner"
+                android:contentDescription="@string/main_meal_planner"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_meal_planner"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_recipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/recipes"
+                android:contentDescription="@string/main_recipes"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_recipes"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_meals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/meals"
+                android:contentDescription="@string/main_meals"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_meals"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_recipe_ideas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/recipe_ideas"
+                android:contentDescription="@string/main_recipe_ideas"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_recipe_ideas"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/main_fragment_image_height"
+                android:src="@drawable/sign_out"
+                android:contentDescription="@string/main_sign_out"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_sign_out"
+                style="@style/main_fragment_text"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</ScrollView>
