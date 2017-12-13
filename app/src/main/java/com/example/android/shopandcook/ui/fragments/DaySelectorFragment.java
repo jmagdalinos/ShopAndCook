@@ -38,11 +38,7 @@ public class DaySelectorFragment extends android.support.v4.app.Fragment {
     private String mUId;
     private int mPosition = 0;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
+    /** Class constructor */
     public static DaySelectorFragment newInstance(String userId, int position) {
         DaySelectorFragment fragment = new DaySelectorFragment();
         Bundle args = new Bundle();

@@ -82,6 +82,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
     private boolean mShowColors = true;
     private Context mContext;
     private boolean mIsDeleted;
+    private int mScrollPosition;
 
     /** Keys for determining whether the list is sorted */
     private static final int KEY_SORT_BY_NAME = 0;
@@ -148,6 +149,14 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
             mShoppingListRecyclerView.setLayoutAnimation(controller);
         }
 
+        if (savedInstanceState != null) {
+            mUId = savedInstanceState.getString(Constants.KEY_USER_ID);
+            mScrollPosition = savedInstanceState.getInt(Constants.KEY_SCROLL_POSITION);
+            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+            }
+        }
+
         // Setup swipe actions on the Recycler View
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new IngredientItemTouchHelper(0,
                 ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT, this);
@@ -183,14 +192,18 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mShoppingListRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_COLOR:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByColorAsc = !mSortedByColorAsc;
                         sortByColor();
                         // Return to the previous position
-                        mShoppingListRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -217,14 +230,18 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mShoppingListRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_COLOR:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByColorAsc = !mSortedByColorAsc;
                         sortByColor();
                         // Return to the previous position
-                        mShoppingListRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -252,14 +269,18 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByNameAsc = !mSortedByNameAsc;
                             sortByName();
-                            mShoppingListRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                         case KEY_SORT_BY_COLOR:
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByColorAsc = !mSortedByColorAsc;
                             sortByColor();
                             // Return to the previous position
-                            mShoppingListRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                     }
                 }
@@ -277,6 +298,15 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         });
 
         return viewRoot;
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(Constants.KEY_USER_ID, mUId);
+        mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
+        outState.putInt(Constants.KEY_SCROLL_POSITION, mScrollPosition);
     }
 
     /** Set the current fragment in the detail activity to null */
@@ -429,7 +459,9 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         mAdapter = new ShoppingListAdapter(getActivity(), mTempListItems, mShowColors, true, this);
         mShoppingListRecyclerView.setAdapter(mAdapter);
         // Return to current position
-        mShoppingListRecyclerView.scrollToPosition(pos);
+        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+        }
     }
 
     /** Updates the widgets with the new shopping list */

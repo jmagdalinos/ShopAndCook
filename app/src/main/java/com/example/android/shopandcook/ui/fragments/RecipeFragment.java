@@ -293,11 +293,6 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
                 .child(Constants.NODE_RECIPES)
                 .child(mUId);
 
-        mIngredientsRef = mDatabase.getReference()
-                .child(Constants.NODE_INGREDIENTS)
-                .child(mUId)
-                .child(mCurrentRecipe.getRecipeId());
-
         // Add a listener to update the Recycler View of recipes
         mRecipesRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -338,6 +333,12 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
             mCurrentRecipe.setRecipeId(key);
             tempRef.setValue(mCurrentRecipe);
         }
+
+
+        mIngredientsRef = mDatabase.getReference()
+                .child(Constants.NODE_INGREDIENTS)
+                .child(mUId)
+                .child(mCurrentRecipe.getRecipeId());
 
         // Add a listener to update the Recycler View of ingredients
         mIngredientsRef.addChildEventListener(new ChildEventListener() {

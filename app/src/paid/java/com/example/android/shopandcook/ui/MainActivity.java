@@ -270,17 +270,28 @@ public class MainActivity extends AppCompatActivity implements
 
     /** Called for setting up the interface for a phone */
     private void setupForPhone() {
-        MainFragment fragment = new MainFragment();
+        if (mSavedInstanceState != null) {
+            mMainFragment = (MainFragment) mMainFragmentManager.getFragment(mSavedInstanceState,
+                    Constants.KEY_MAIN);
+        } else {
+            mMainFragment = new MainFragment();
+        }
         mMainFragmentManager.beginTransaction()
-                .replace(R.id.cl_fragment_main, fragment)
+                .replace(R.id.cl_fragment_main, mMainFragment)
                 .commit();
     }
 
     /** Called for setting up the interface for a tablet or large screen */
     private void setupForTablet() {
-        MainFragment fragment = new MainFragment();
+        if (mSavedInstanceState != null) {
+            mMainFragment = (MainFragment) mMainFragmentManager.getFragment(mSavedInstanceState,
+                    Constants.KEY_MAIN);
+        } else {
+            mMainFragment = new MainFragment();
+        }
+
         mMainFragmentManager.beginTransaction()
-                .replace(R.id.cl_fragment_main, fragment)
+                .replace(R.id.cl_fragment_main, mMainFragment)
                 .commit();
 
         if (mSavedInstanceState != null) {

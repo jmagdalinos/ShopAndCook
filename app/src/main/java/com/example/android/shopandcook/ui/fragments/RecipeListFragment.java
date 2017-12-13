@@ -98,6 +98,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     private boolean mIsDeleted;
     private boolean mSortedByNameAsc = true;
     private boolean mSortedByCategoryAsc = false;
+    private int mScrollPosition;
 
     /** Id of the cursor loader */
     private static final int LOADER_ID = 52;
@@ -141,7 +142,6 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnMealFragmentCallback");
         }
-
     }
 
     @Nullable
@@ -168,6 +168,11 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
 
         if (savedInstanceState != null) {
             mUId = savedInstanceState.getString(Constants.KEY_USER_ID);
+            mScrollPosition = savedInstanceState.getInt(Constants.KEY_SCROLL_POSITION);
+            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems
+                    .size()) {
+                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+            }
         }
 
         if (mUseApi) {
@@ -193,7 +198,8 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     @Override
     public void onDestroyView() {
         // Set the current fragment name in the detail activity to null so it does not save a
-        // null fragmentDetailActivity.mCurrentFragment = null;
+        // null fragment
+        DetailActivity.mCurrentFragment = null;
 
         // Hide the food2fork banner
         TextView apiAttribTextView = getActivity().findViewById(R.id.tv_api_attribution);
@@ -205,6 +211,8 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(Constants.KEY_USER_ID, mUId);
+        mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
+        outState.putInt(Constants.KEY_SCROLL_POSITION, mScrollPosition);
     }
 
     /** Sets up the fragment for use with the food2fork API */
@@ -277,7 +285,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                 String key = dataSnapshot.getKey();
 
                 // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                mScrollPosition= mLinearLayoutManager.findFirstVisibleItemPosition();
 
                 // Add the recipe from the list and update the adapter
                 mDatabaseListItems.put(key, recipe);
@@ -290,14 +298,18 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_TAGS:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByCategoryAsc = !mSortedByCategoryAsc;
                         sortByTags();
                         // Return to the previous position
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -308,7 +320,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                 String key = dataSnapshot.getKey();
 
                 // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                 // Add the recipe from the list and update the adapter
                 mDatabaseListItems.put(key, recipe);
@@ -321,14 +333,18 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_TAGS:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByCategoryAsc = !mSortedByCategoryAsc;
                         sortByTags();
-                        // Return to the previous position
-                        mRecyclerView.scrollToPosition(pos);
+                        // Return to the previous pPosition
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -342,7 +358,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                     mDatabaseListItems.remove(key);
 
                     // Get the current position
-                    int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                    mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                     // Update the adapter
                     mTempListItems = hashMapToArray(mDatabaseListItems);
@@ -353,14 +369,18 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByNameAsc = !mSortedByNameAsc;
                             sortByName();
-                            mRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                         case KEY_SORT_BY_TAGS:
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByCategoryAsc = !mSortedByCategoryAsc;
                             sortByTags();
                             // Return to the previous position
-                            mRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                     }
                 }

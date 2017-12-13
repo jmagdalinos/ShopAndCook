@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements
     private boolean mIsTablet;
     private FragmentManager mMainFragmentManager;
     private android.support.v4.app.FragmentManager mDetailFragmentManager;
+    private MainFragment mMainFragment;
     private ShoppingListFragment mShoppingListFragment;
     private DaySelectorFragment mDaySelectorFragment;
     private RecipeListFragment mRecipeListFragment, mRecipeAPIListFragment;
@@ -212,6 +213,11 @@ public class MainActivity extends AppCompatActivity implements
             // Save the name of the current fragment
             outState.putString(Constants.EXTRAS_CURRENT_FRAGMENT, mCurrentFragmentName);
         }
+
+        if (mUId != null) {
+            // Save the main fragment
+            mMainFragmentManager.putFragment(outState, Constants.KEY_MAIN, mMainFragment);
+        }
     }
 
     /** Called when the sign-in process has been completed */
@@ -273,9 +279,14 @@ public class MainActivity extends AppCompatActivity implements
 
     /** Called for setting up the interface for a phone */
     private void setupForPhone() {
-        MainFragment fragment = new MainFragment();
+        if (mSavedInstanceState != null) {
+            mMainFragment = (MainFragment) mMainFragmentManager.getFragment(mSavedInstanceState,
+                    Constants.KEY_MAIN);
+        } else {
+            mMainFragment = new MainFragment();
+        }
         mMainFragmentManager.beginTransaction()
-                .replace(R.id.cl_fragment_main, fragment)
+                .replace(R.id.cl_fragment_main, mMainFragment)
                 .commit();
     }
 
@@ -287,9 +298,15 @@ public class MainActivity extends AppCompatActivity implements
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        MainFragment fragment = new MainFragment();
+        if (mSavedInstanceState != null) {
+            mMainFragment = (MainFragment) mMainFragmentManager.getFragment(mSavedInstanceState,
+                    Constants.KEY_MAIN);
+        } else {
+            mMainFragment = new MainFragment();
+        }
+
         mMainFragmentManager.beginTransaction()
-                .replace(R.id.cl_fragment_main, fragment)
+                .replace(R.id.cl_fragment_main, mMainFragment)
                 .commit();
 
         if (mSavedInstanceState != null) {

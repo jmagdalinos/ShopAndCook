@@ -38,6 +38,8 @@ public class Constants {
     public static final String EXTRAS_DAY_MEAL = "day_meal";
     public static final String KEY_USER_ID = "user_id";
     public static final String KEY_API_KEY = "api_key";
+    public static final String KEY_MAIN = "main";
+    public static final String KEY_SCROLL_POSITION = "scroll_position";
 
     /** Extras for distinguishing widgets */
     public static final String WIDGET_NAME = "widget_name";

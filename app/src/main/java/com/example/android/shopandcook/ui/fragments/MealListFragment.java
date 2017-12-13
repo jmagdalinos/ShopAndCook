@@ -82,6 +82,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     private int mSortedBy = KEY_SORT_BY_NAME;
     private boolean mSortedByNameAsc = true;
     private boolean mSortedByCategoryAsc = false;
+    private int mScrollPosition;
 
     /** Keys for determining whether the list is sorted */
     private static final int KEY_SORT_BY_NAME = 0;
@@ -137,6 +138,10 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
 
         if (savedInstanceState != null) {
             mUId = savedInstanceState.getString(Constants.KEY_USER_ID);
+            mScrollPosition = savedInstanceState.getInt(Constants.KEY_SCROLL_POSITION);
+            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+            }
         }
 
         // Set the divider on the recycler view
@@ -164,6 +169,8 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(Constants.KEY_USER_ID, mUId);
+        mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
+        outState.putInt(Constants.KEY_SCROLL_POSITION, mScrollPosition);
     }
 
     /** Sets up the fragment's UI */
@@ -176,10 +183,6 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
 
         mMealRecipesRef = mDatabase.getReference()
                 .child(Constants.NODE_MEAL_RECIPES)
-                .child(mUId);
-
-        DatabaseReference recipesRef = mDatabase.getReference()
-                .child(Constants.NODE_RECIPES)
                 .child(mUId);
 
         mDatabaseListItems = new HashMap<>();
@@ -214,7 +217,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                 String key = dataSnapshot.getKey();
 
                 // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                 // Add the recipe from the list and update the adapter
                 mDatabaseListItems.put(key, meal);
@@ -227,14 +230,18 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_CATEGORY:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByCategoryAsc = !mSortedByCategoryAsc;
                         sortByCategory();
                         // Return to the previous position
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -245,7 +252,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                 String key = dataSnapshot.getKey();
 
                 // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                 // Add the recipe from the list and update the adapter
                 mDatabaseListItems.put(key, meal);
@@ -258,14 +265,18 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByNameAsc = !mSortedByNameAsc;
                         sortByName();
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                     case KEY_SORT_BY_CATEGORY:
                         // Reverse the sort boolean to perform a correct sorting
                         mSortedByCategoryAsc = !mSortedByCategoryAsc;
                         sortByCategory();
                         // Return to the previous position
-                        mRecyclerView.scrollToPosition(pos);
+                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                        }
                         break;
                 }
             }
@@ -281,7 +292,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                     mDatabaseListItems.remove(key);
 
                     // Get the current position
-                    int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
+                    mScrollPosition = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                     // Update the adapter
                     mTempListItems = hashMapToArray(mDatabaseListItems);
@@ -292,14 +303,18 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByNameAsc = !mSortedByNameAsc;
                             sortByName();
-                            mRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                         case KEY_SORT_BY_CATEGORY:
                             // Reverse the sort boolean to perform a correct sorting
                             mSortedByCategoryAsc = !mSortedByCategoryAsc;
                             sortByCategory();
                             // Return to the previous position
-                            mRecyclerView.scrollToPosition(pos);
+                            if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+                                mLinearLayoutManager.scrollToPosition(mScrollPosition);
+                            }
                             break;
                     }
                 }
