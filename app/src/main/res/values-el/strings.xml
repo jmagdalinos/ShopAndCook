@@ -1,0 +1,210 @@
+<resources>
+    <string name="app_name">Shop &amp; Cook</string>
+
+    <!-- Main Activity Titles -->
+    <string name="main_shopping_list">Λίστα με τα ψώνια</string>
+    <string name="main_meal_planner">Πρόγραμμα Γευμάτων</string>
+    <string name="main_recipes">Συνταγές</string>
+    <string name="main_meals">Γεύματα</string>
+    <string name="main_recipe_ideas">Ιδέες για συνταγές!</string>
+    <string name="main_sign_out">Έξοδος</string>
+
+    <!--Ingredient List Header -->
+    <string name="ingredient_list_header_name">Όνομα</string>
+    <string name="ingredient_list_header_quantity">Ποσότητα</string>
+    <string name="ingredient_list_header_measure">Μέτρο</string>
+    <string name="ingredient_list_header_notes">Σχόλια</string>
+
+    <!-- Ingredient List Item -->
+    <string name="ingredient_list_item_hint_name">Κρεμμύδθα</string>
+    <string name="ingredient_list_item_hint_quantity">2</string>
+    <string name="ingredient_list_item_hint_measure">kgs</string>
+    <string name="ingredient_list_item_hint_comments">κομμένα</string>
+
+    <!-- Recipe -->
+    <string name="recipe_description">Περιγραφή:</string>
+    <string name="recipe_name_hint">Όνομα Συνταγής</string>
+    <string name="recipe_servings_hint">Μερίδες</string>
+    <string name="recipe_meals_hint">Γεύματα</string>
+    <string name="recipe_recipes_hint">Συνταγές</string>
+    <string name="recipe_prep_time_hint">Χρόνος Προετοιμασίας</string>
+    <string name="recipe_description_hint">Περιγραφή</string>
+    <string name="recipe_tags_hint">Ετικέτες</string>
+
+    <!-- Recipe titles -->
+    <string name="recipe_ingredients_title">Συστατικά:</string>
+    <string name="recipe_button_web">Ιστοσελίδα συνταγής...</string>
+    <string name="recipe_button_add_ingredient">Προσθήκη συστατικού</string>
+
+    <!-- Recipe List Item -->
+    <string name="recipe_list_item_hint_name">Pasta ala Carbonara</string>
+    <string name="recipe_list_item_hint_servings">4</string>
+    <string name="recipe_list_item_hint_tags">Ζυμαρικά</string>
+    <string name="recipe_list_item_hint_description">Συνταγή με μακαρόνια, μπέικον και
+        αυγά, με διάφορες παραλλαγές ανά την Ιταλία</string>
+
+    <!-- RecipeFromApi List Item -->
+    <string name="recipe_list_item_no_thumbnail">ΜΗ ΔΙΑΘΕΣΙΜΗ\nΕΙΚΟΝΑ</string>
+    <string name="api_attribution">Πηγή: Food2Fork.com</string>
+
+    <!-- Meal List Item -->
+    <string name="meal_list_item_delete">Διαγραφή</string>
+    <string name="meal_list_item_hint_name">Όνομα Γεύματος</string>
+
+    <!-- Meal titles -->
+    <string name="meal_button_add_recipe">Προσθήκη συνταγής</string>
+    <string name="meal_button_add_new_recipe">Προσθήκη νέας συνταγής</string>
+    <string name="meal_button_add_new_meal">Προσθήκη νέου γεύματος</string>
+    <string name="meal_button_remove_meal">Αφαίρεση τρέχοντος γεύματος</string>
+
+    <!-- Day titles -->
+    <string name="day_breakfast_title">Πρωινό</string>
+    <string name="day_morning_snack_title">Δεκατιανό</string>
+    <string name="day_lunch_title">Γεύμα</string>
+    <string name="day_afternoon_snack_title">Απογευματινό</string>
+    <string name="day_dinner_title">Δείπνο</string>
+    <string name="day_add_meal">Πατήστε για να προσθέσετε ή να δείτε ένα γεύμα</string>
+
+    <!-- Day placeholders -->
+    <string name="day_breakfast_placeholder">Καφές και δημητριακά</string>
+    <string name="day_morning_snack_placeholder">Καροτοχυμός και ξηροί καρποί</string>
+    <string name="day_lunch_placeholder">Πράσινη σαλάτα και ψωμί</string>
+    <string name="day_afternoon_snack_placeholder">Μπανάνα</string>
+    <string name="day_dinner_placeholder">Πίτσα και μπύρα</string>
+
+    <!-- Menu Items -->
+    <string name="action_search">Εύρεση…</string>
+    <string name="action_clear">Διαγραφή όλων...</string>
+    <string name="action_add_shopping_item">Προσθήκη αντικειμένου στη λίστα με τα ψώνια</string>
+    <string name="action_add_recipe">Προσθήκη συνταγής</string>
+    <string name="action_recipe_edit">Επεξεργασία</string>
+    <string name="action_sort_by_name">Ταξινόμηση κατά όνομα</string>
+    <string name="action_sort_by_tags">Ταξινόμηση κατά ετικέτα</string>
+    <string name="action_sort_by_color">Ταξινόμηση κατά χρώμα</string>
+    <string name="action_toggle_color">Εμφάνιση χρωμάτων</string>
+    <string name="action_share">Share</string>
+    <string name="action_save">Αποθήκευση</string>
+    <string name="action_cancel">Ακύρωση</string>
+    <string name="action_clear_day">Εκκαθάριση ημέρας</string>
+    <string name="action_clear_week">Εκκαθάριση εβδομάδας</string>
+    <string name="action_add_day_shopping">Προσθήκη ψώνιων ημέρας στη λίστα</string>
+    <string name="action_add_week_shopping">Προσθήκη ψώνιων εβδομάδας στη λίστα</string>
+
+    <!-- Toast messages -->
+    <string name="sign_in">Επιτυχής Είσοδος.\nΚαλωσήρθατε στο Shop &amp; Cook!</string>
+    <string name="add_ingredient_name">Παρακαλώ προσθέστε το όνομα του συστατικού</string>
+    <string name="add_recipe_name">Παρακαλώ προσθέστε το όνομα της συνταγής</string>
+    <string name="add_meal_name">PΠαρακαλώ προσθέστε το όνομα του γεύματος</string>
+
+    <!-- SnackBar messages -->
+    <string name="snackbar_delete_recipe">1 συταγή διαγράφηκε!</string>
+    <string name="snackbar_delete_meal">1 γεύμα διαγράφηκε!</string>
+    <string name="snackbar_undo">Επαναφορά</string>
+
+    <!-- General messages -->
+    <string name="no_internet">Δεν υπάρχει σύνδεση στο διαδίκτυο. \nΠαρακαλώ
+        ξαναπροσπαθήστε</string>
+    <string name="no_api_data">Δεν υπάρχουν συνταγές προς εμφάνιση \nΔοκιμάστε να ψάξετε
+        για μια!</string>
+    <string name="no_shopping_list_data">Δεν υπάρχουν αντικείμενα στη λίστα με τα ψώνια!
+        \nΒεβαιωθείτε ότι υπάρχει σύνδεση στο διαδίκτυ ή δοκιμάστε να προσθέσετε μια από το μενού
+        ή και όλα τα ψώνια της ημέρας ή της εβδομάδας από το μενού του Προγράμματος
+        Γευμάτων!</string>
+    <string name="no_recipes_meals_data">Δεν υπάρχουν αποθηκευμένα αντικείμενα! \nΒεβαιωθείτε ότι
+        υπάρχει σύνδεση στο διαδίκτυ ή δοκιμάστε να προσθέσετε ένα από το μενού!</string>
+    <string name="error">Ουπς! Κάτι πήγε στραβά! \nΠαρακαλώ ξαναπροσπαθήστε αργότερα</string>
+
+    <!-- Dialog strings -->
+    <string name="dialog_save">Αποθήκευση</string>
+    <string name="dialog_cancel">Ακύρωση</string>
+    <string name="dialog_yes">Ναι</string>
+    <string name="dialog_title_sign_out_title">Έξοδος</string>
+    <string name="dialog_title_sign_out">Είστε σίγουρος ότι θέλετε να βγείτε;</string>
+    <string name="dialog_title_edit_ingredient">Επεξεργασία συστατικού</string>
+    <string name="dialog_title_create_ingredient">Δημιουργία Συστατικού</string>
+    <string name="dialog_title_edit_shopping_item">Επεξεργασία αντικειμένου</string>
+    <string name="dialog_title_create_shopping_item">Δημιουργία αντικειμένου</string>
+    <string name="dialog_title_select_recipes">Επιλέξτε Συνταγή</string>
+    <string name="dialog_title_select_meal">Επιλέξτε Γεύμα</string>
+    <string name="dialog_color_picker_title">Επιλέξτε Χρώμα</string>
+    <string name="dialog_clear_shopping_list_title">Εκκαθάριση λίστας</string>
+    <string name="dialog_clear_recipes_title">Διαγραφή όλων των συνταγών</string>
+    <string name="dialog_clear_meals_title">Διαγραφή όλων των γευμάτων</string>
+    <string name="dialog_clear_shopping_list">Είστε σίγουρος ότι θέλετε να εκκαθαρίσετε τη λίστα
+        με τα ψώνια;</string>
+    <string name="dialog_clear_recipes">Είστε σίγουρος ότι θέλετε να διαγράψετε όλες τις
+        συνταγές;</string>
+    <string name="dialog_clear_meals">Είστε σίγουρος ότι θέλετε να διαγράψετε όλα τα
+        γεύματα;</string>
+    <string name="dialog_buy_paid_title">Μη διαθέσιμη λειτουργία</string>
+    <string name="dialog_buy_paid">Παρακαλώ αγοράστε την πλήρη έκδοση για να ενεργοποιήσετε
+    αυτήν την λειτουργία</string>
+
+    <!-- Days of the week -->
+    <string name="monday">Δευτέρα</string>
+    <string name="tuesday">Τρίτη</string>
+    <string name="wednesday">Τετάρτη</string>
+    <string name="thursday">Πέμπτη</string>
+    <string name="friday">Παρασκευή</string>
+    <string name="saturday">Σάββατο</string>
+    <string name="sunday">Κυριακή</string>
+
+    <!-- Messages for sharing -->
+    <string name="share_meal_title">Γεύμα της ημέρας:</string>
+    <string name="share_meal_with">με</string>
+    <string name="share_meal_and">και</string>
+    <string name="share_recipe_title">Συνταγή της ημέρας:</string>
+
+    <!-- Measure spinner items singulars -->
+    <string name="measure_0">kg</string>
+    <string name="measure_1">gr</string>
+    <string name="measure_2">oz</string>
+    <string name="measure_3">ml</string>
+    <string name="measure_4">lt</string>
+    <string name="measure_5">κούπα</string>
+    <string name="measure_6">κτγ</string>
+    <string name="measure_7">κτσ</string>
+    <string name="measure_8">γαλόνι</string>
+    <string name="measure_9">ounce</string>
+    <string name="measure_10">τμχ</string>
+    <string name="measure_11">πακέτο</string>
+    <string name="measure_12">μπουκάλι</string>
+
+    <!-- Measure spinner items singulars -->
+    <string name="measure_0_plural">kgs</string>
+    <string name="measure_1_plural">grs</string>
+    <string name="measure_2_plural">oz</string>
+    <string name="measure_3_plural">mls</string>
+    <string name="measure_4_plural">lts</string>
+    <string name="measure_5_plural">κούπες</string>
+    <string name="measure_6_plural">κτγ</string>
+    <string name="measure_7_plural">κτσ</string>
+    <string name="measure_8_plural">γαλόνια</string>
+    <string name="measure_9_plural">ounces</string>
+    <string name="measure_10_plural">τμχ</string>
+    <string name="measure_11_plural">πακέτα</string>
+    <string name="measure_12_plural">μπουκάλια</string>
+
+    <!-- AppWidgets -->
+    <string name="widget_day_no_meal">Δεν έχει ορισθεί γεύμα</string>
+    <string name="widget_sign_in">Δεν υπάρχουν δεδομένα. Παρακαλώ συνδεθείτε</string>
+
+    <!-- Content Description -->
+    <string name="content_description_border_up">Άνω περιθώριο</string>
+    <string name="content_description_border_down">Κάτω περιθώριο</string>
+    <string name="content_description_grid_h">Οριζόντιο πλέγμα</string>
+    <string name="content_description_grid_v">Κατακόρυφο πλέγμα</string>
+    <string name="content_description_chkbx">Τικ</string>
+    <string name="content_description_color_green">Πράσινη ετικέτα</string>
+    <string name="content_description_color_yellow">Κίτρινη ετικέτα</string>
+    <string name="content_description_color_purple">Μωβ ετικέτα</string>
+    <string name="content_description_color_blue">Μπλε ετικέτα</string>
+    <string name="content_description_color_red">Κόκκινη ετικέτα</string>
+    <string name="content_description_color_grey">Γκρι ετικέτα</string>
+    <string name="content_description_notebook_hole">Τρύπα σημειωματαρίου</string>
+    <string name="content_description_recipe_image">Εικόνα συνταγής</string>
+    <string name="content_description_website">Είσοδος στην ιστοσελίδα food2fork</string>
+    <string name="content_description_prep_time_edit">Αλλαγή χρόνου προετοιμασίας</string>
+    <string name="content_description_recipe_rating">Βαθμολογία συνταγής</string>
+    <string name="content_description_recipe_color">Ετικέτα χρώματος</string>
+</resources>

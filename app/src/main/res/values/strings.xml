@@ -75,7 +75,7 @@
     <!-- Menu Items -->
     <string name="action_search">Search…</string>
     <string name="action_clear">Delete all</string>
-    <string name="action_add_shopping_item">Add shopping ingredient</string>
+    <string name="action_add_shopping_item">Add shopping item</string>
     <string name="action_add_recipe">Add recipe</string>
     <string name="action_recipe_edit">Edit</string>
     <string name="action_sort_by_name">Sort by name</string>
@@ -106,8 +106,9 @@
     <string name="no_api_data">No recipes to display \nTry searching for one!</string>
     <string name="no_shopping_list_data">There are no items in the shopping list! \nCheck your
         internet connection or try
-        adding one from the menu or adding the ingredients for an entire day or week from the Meal
-        Planner!</string>
+        adding one from the menu or even adding the ingredients for an entire day or week from the
+        Meal
+        Planner\s menu!</string>
     <string name="no_recipes_meals_data">You have no items saved! \nCheck your internet connection
         or try adding one from the menu!</string>
     <string name="error">Oops! Something went wrong! \nPlease try again later</string>
