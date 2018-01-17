@@ -40,6 +40,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.LinearLayout;
 
 import com.example.android.shopandcook.R;
 import com.example.android.shopandcook.model.Meal;
@@ -72,6 +73,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     private MealListAdapter mAdapter;
     private ConstraintLayout mConstraintLayout;
     private RecyclerView mRecyclerView;
+    private LinearLayout mNoDataLinearLayout;
     private LinearLayoutManager mLinearLayoutManager;
     private OnMealFragmentCallback mCallback;
     private FirebaseDatabase mDatabase;
@@ -128,7 +130,11 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
 
         mUId = getArguments().getString(Constants.KEY_USER_ID);
 
+        // Get the Constraint Layout to be used in the SnackBar
         mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
+
+        // Get the LinearLayout for the "No Data" message
+        mNoDataLinearLayout = viewRoot.findViewById(R.id.ll_recipe_meal_list_no_data);
 
         // Setup the Recycler View
         mRecyclerView = viewRoot.findViewById(R.id.rv_recipe_list);
@@ -333,13 +339,19 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     }
 
     /** Converts the HashMap of meals to an ArrayList of meals for the adapter */
-    private static ArrayList<Meal> hashMapToArray(HashMap<String, Meal> mealHashMap) {
+    private ArrayList<Meal> hashMapToArray(HashMap<String, Meal> mealHashMap) {
         ArrayList<Meal> meals= new ArrayList<>();
         // Convert the HashMap to an ArrayList
         for (String key : mealHashMap.keySet()) {
             Meal meal = mealHashMap.get(key);
             meal.setMealId(key);
             meals.add(meal);
+        }
+
+        if (meals.size() > 0) {
+            toggleNoDataMessage(false);
+        } else {
+            toggleNoDataMessage(true);
         }
         return meals;
     }
@@ -542,6 +554,15 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     @Override
     public void onClicked(Meal meal) {
         mCallback.onMealClick(false,  meal, null, null, null);
+    }
+
+    /** Toggles the visibility of the "No data" message */
+    private void toggleNoDataMessage(boolean showMessage) {
+        if (showMessage) {
+            mNoDataLinearLayout.setVisibility(View.VISIBLE);
+        } else {
+            mNoDataLinearLayout.setVisibility(View.GONE);
+        }
     }
 
     /** Setup the menu */

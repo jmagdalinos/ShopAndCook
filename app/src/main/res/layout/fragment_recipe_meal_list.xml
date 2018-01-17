@@ -43,4 +43,26 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/border_margin_top"/>
 
+    <LinearLayout
+        android:id="@+id/ll_recipe_meal_list_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/no_data_icon_size"
+            android:layout_height="@dimen/no_data_icon_size"
+            android:src="@drawable/no_data_icon"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/list_item_icon_margin"
+            android:gravity="center"
+            android:text="@string/no_recipes_meals_data"/>
+    </LinearLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

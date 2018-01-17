@@ -344,11 +344,38 @@ public class DayFragment extends Fragment implements
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         // Iterate through all the Meal Titles
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
-                            String mealTitleId = child.getKey() + "," + dayId;
-                            String mealId = child.getValue(String.class);
+                            // Check if the child is a meal
+                            String key = child.getKey();
+                            boolean isMeal = false;
+                            switch (key) {
+                                case Constants.NODE_BREAKFAST:
+                                    isMeal = true;
+                                    break;
+                                case Constants.NODE_MORNING_SNACK:
+                                    isMeal = true;
+                                    break;
+                                case Constants.NODE_LUNCH:
+                                    isMeal = true;
+                                    break;
+                                case Constants.NODE_AFTERNOON_SNACK:
+                                    isMeal = true;
+                                    break;
+                                case Constants.NODE_DINNER:
+                                    isMeal = true;
+                                    break;
+                                default:
+                                    isMeal = false;
+                                    break;
+                            }
 
-                            // Get the meal
-                            getMealServings(mealId, mealTitleId);
+                            // The child is a meal; add its ingredients to the shopping list
+                            if (isMeal) {
+                                String mealTitleId = child.getKey() + "," + dayId;
+                                String mealId = child.getValue(String.class);
+
+                                // Get the meal
+                                getMealServings(mealId, mealTitleId);
+                            }
                         }
                     }
 

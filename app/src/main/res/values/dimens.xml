@@ -13,6 +13,9 @@
     <dimen name="main_fragment_image_height">200dp</dimen>
     <dimen name="main_fragment_text_padding">8dp</dimen>
 
+    <!-- No Data Message -->
+    <dimen name="no_data_icon_size">100dp</dimen>
+
     <!-- Recipe List Item from API -->
     <dimen name="api_list_item_image_size">100dp</dimen>
     <dimen name="api_list_item_rank_circle_size">48dp</dimen>

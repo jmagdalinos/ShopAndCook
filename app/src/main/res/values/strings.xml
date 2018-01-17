@@ -103,7 +103,13 @@
 
     <!-- General messages -->
     <string name="no_internet">No Internet Connection. \nPlease try again</string>
-    <string name="no_data">No recipes to display \nTry searching for one!</string>
+    <string name="no_api_data">No recipes to display \nTry searching for one!</string>
+    <string name="no_shopping_list_data">There are no items in the shopping list! \nCheck your
+        internet connection or try
+        adding one from the menu or adding the ingredients for an entire day or week from the Meal
+        Planner!</string>
+    <string name="no_recipes_meals_data">You have no items saved! \nCheck your internet connection
+        or try adding one from the menu!</string>
     <string name="error">Oops! Something went wrong! \nPlease try again later</string>
 
     <!-- Dialog strings -->

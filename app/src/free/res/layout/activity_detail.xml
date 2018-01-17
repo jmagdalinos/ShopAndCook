@@ -30,7 +30,7 @@
         android:background="@android:color/white"
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_detail_down"
         app:layout_constraintTop_toBottomOf="@id/toolbar_main_app_bar"
         android:layout_marginTop="@dimen/border_margin_top"
         android:layout_marginBottom="@dimen/border_margin_bottom"

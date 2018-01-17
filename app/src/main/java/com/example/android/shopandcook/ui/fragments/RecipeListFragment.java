@@ -45,6 +45,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -86,6 +87,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     private RecipeListAdapter mAdapter;
     private ConstraintLayout mConstraintLayout;
     private RecyclerView mRecyclerView;
+    private LinearLayout mNoDataLinearLayout;
     private TextView mTextView;
     private ProgressBar mProgressBar;
     private LinearLayoutManager mLinearLayoutManager;
@@ -156,9 +158,13 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
         mUseApi = getArguments().getBoolean(KEY_USE_API);
         mUId = getArguments().getString(Constants.KEY_USER_ID);
 
+        // Get the Constraint Layout to be used in the SnackBar
         mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
         mTextView = viewRoot.findViewById(R.id.tv_recipe_list);
         mProgressBar = viewRoot.findViewById(R.id.pb_recipe_list);
+
+        // Get the LinearLayout for the "No Data" message
+        mNoDataLinearLayout = viewRoot.findViewById(R.id.ll_recipe_meal_list_no_data);
 
         // Setup the Recycler View
         mRecyclerView = viewRoot.findViewById(R.id.rv_recipe_list);
@@ -223,6 +229,9 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
         // Display the food2fork attribution message
         TextView apiAttribTextView = getActivity().findViewById(R.id.tv_api_attribution);
         apiAttribTextView.setVisibility(View.VISIBLE);
+
+        // Hide the "No Data" message
+        toggleNoDataMessage(false);
 
         // Create an instance of the adapter and set it on the Recycler View
         mApiAdapter = new RecipeListFromApiAdapter(getActivity(), this);
@@ -399,13 +408,19 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     }
 
     /** Converts the HashMap of recipes to an ArrayList of recipes for the adapter */
-    private static ArrayList<Recipe> hashMapToArray(HashMap<String, Recipe> recipeHashMap) {
+    private ArrayList<Recipe> hashMapToArray(HashMap<String, Recipe> recipeHashMap) {
         ArrayList<Recipe> recipes= new ArrayList<>();
         // Convert the HashMap to an ArrayList
         for (String key : recipeHashMap.keySet()) {
             Recipe recipe = recipeHashMap.get(key);
             recipe.setRecipeId(key);
             recipes.add(recipe);
+        }
+
+        if (recipes.size() > 0) {
+            toggleNoDataMessage(false);
+        } else {
+            toggleNoDataMessage(true);
         }
         return recipes;
     }
@@ -506,7 +521,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
         } else {
             mApiAdapter.swapCursor(null);
             mTextView.setVisibility(View.VISIBLE);
-            mTextView.setText(R.string.no_data);
+            mTextView.setText(R.string.no_api_data);
         }
 
     }
@@ -627,6 +642,15 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     @Override
     public void onItemClick(String recipe_id) {
         mCallback.onRecipeClick(false, true, null, recipe_id);
+    }
+
+    /** Toggles the visibility of the "No data" message */
+    private void toggleNoDataMessage(boolean showMessage) {
+        if (showMessage) {
+            mNoDataLinearLayout.setVisibility(View.VISIBLE);
+        } else {
+            mNoDataLinearLayout.setVisibility(View.GONE);
+        }
     }
 
     /** Setup the menu */

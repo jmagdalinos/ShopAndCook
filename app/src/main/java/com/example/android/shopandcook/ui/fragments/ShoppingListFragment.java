@@ -40,6 +40,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.android.shopandcook.R;
@@ -71,6 +72,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
     private ConstraintLayout mConstraintLayout;
     private String mUId;
     private RecyclerView mShoppingListRecyclerView;
+    private LinearLayout mNoDataLinearLayout;
     private HashMap<String, Ingredient> mDatabaseListItems;
     private ArrayList<Ingredient> mTempListItems;
     private ShoppingListAdapter mAdapter;
@@ -117,11 +119,14 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         mDatabaseListItems = new HashMap<>();
         mTempListItems = new ArrayList<>();
 
-        // Get the Constraint Layout to be used in the snackbar
+        // Get the Constraint Layout to be used in the SnackBar
         mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
         TextView nameTextView = viewRoot.findViewById(R.id.tv_shopping_list_name);
         TextView quantityTextView = viewRoot.findViewById(R.id
                 .tv_shopping_list_quantity);
+
+        // Get the LinearLayout for the "No Data" message
+        mNoDataLinearLayout = viewRoot.findViewById(R.id.ll_shopping_list_no_data);
 
         // Get the custom font and set it on the titles
         Typeface mFont = Typeface.createFromAsset(getActivity().getAssets(),
@@ -136,6 +141,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         mShoppingListRecyclerView.setHasFixedSize(true);
 
         if (mTempListItems != null) {
+
             mAdapter = new ShoppingListAdapter(getActivity(), mTempListItems, mShowColors, true,
                     this);
             mShoppingListRecyclerView.setAdapter(mAdapter);
@@ -175,9 +181,6 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                 Ingredient ingredient = dataSnapshot.getValue(Ingredient.class);
                 String key = dataSnapshot.getKey();
 
-                // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
-
                 // Add the ingredient from the list and update the adapter
                 mDatabaseListItems.put(key, ingredient);
                 mTempListItems = hashMapToArray(mDatabaseListItems);
@@ -212,9 +215,6 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 Ingredient ingredient = dataSnapshot.getValue(Ingredient.class);
                 String key = dataSnapshot.getKey();
-
-                // Get the current position
-                int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                 // Add the ingredient from the list and update the adapter
                 mDatabaseListItems.put(key, ingredient);
@@ -253,9 +253,6 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
 
                     // Remove the ingredient from the list and update the adapter
                     mDatabaseListItems.remove(key);
-
-                    // Get the current position
-                    int pos = mLinearLayoutManager.findFirstVisibleItemPosition();
 
                     // Update the adapter
                     mTempListItems = hashMapToArray(mDatabaseListItems);
@@ -349,6 +346,12 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                     ingredients.add(currentIngredient);
                 }
             }
+        }
+
+        if (ingredients.size() > 0) {
+            toggleNoDataMessage(false);
+        } else {
+            toggleNoDataMessage(true);
         }
         return ingredients;
     }
@@ -461,6 +464,15 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         // Return to current position
         if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
             mLinearLayoutManager.scrollToPosition(mScrollPosition);
+        }
+    }
+
+    /** Toggles the visibility of the "No data" message */
+    private void toggleNoDataMessage(boolean showMessage) {
+        if (showMessage) {
+            mNoDataLinearLayout.setVisibility(View.VISIBLE);
+        } else {
+            mNoDataLinearLayout.setVisibility(View.GONE);
         }
     }
 
