@@ -190,8 +190,8 @@
     <string name="widget_sign_in">Δεν υπάρχουν δεδομένα. Παρακαλώ συνδεθείτε</string>
 
     <!-- Content Description -->
-    <string name="content_description_border_up">Άνω περιθώριο</string>
-    <string name="content_description_border_down">Κάτω περιθώριο</string>
+    <string name="content_description_border_up">Άνω διακοσμητικό περιθώριο</string>
+    <string name="content_description_border_down">Κάτω διακοσμητικό περιθώριο</string>
     <string name="content_description_grid_h">Οριζόντιο πλέγμα</string>
     <string name="content_description_grid_v">Κατακόρυφο πλέγμα</string>
     <string name="content_description_chkbx">Τικ</string>
