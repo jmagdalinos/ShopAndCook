@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements
     private boolean mIsTablet;
     private FragmentManager mMainFragmentManager;
     private android.support.v4.app.FragmentManager mDetailFragmentManager;
+    private MainFragment mMainFragment;
     private ShoppingListFragment mShoppingListFragment;
     private DaySelectorFragment mDaySelectorFragment;
     private RecipeListFragment mRecipeListFragment, mRecipeAPIListFragment;
