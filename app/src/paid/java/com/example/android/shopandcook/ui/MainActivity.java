@@ -210,6 +210,10 @@ public class MainActivity extends AppCompatActivity implements
             // Save the name of the current fragment
             outState.putString(Constants.EXTRAS_CURRENT_FRAGMENT, mCurrentFragmentName);
         }
+
+        if (!mIsTablet && mUId!= null) {
+            mMainFragmentManager.putFragment(outState, Constants.KEY_MAIN, mMainFragment);
+        }
     }
 
     /** Called when the sign-in process has been completed */

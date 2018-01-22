@@ -203,4 +203,5 @@
     <string name="content_description_prep_time_edit">Change preparation time</string>
     <string name="content_description_recipe_rating">Recipe rating</string>
     <string name="content_description_recipe_color">Color tag</string>
+    <string name="content_description_no_data_icon">No Data icon</string>
 </resources>
