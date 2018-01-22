@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1051090479106:android:136e2775233cc077",
+        "mobilesdk_app_id": "1:1051090479106:android:f83e923babb42fb8",
         "android_client_info": {
-          "package_name": "com.example.android.shopandcook"
+          "package_name": "com.johnmagdalinos.android.shopandcook.paid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1051090479106-vmhjs3el2ei40o6isju1d40fvjvprc1m.apps.googleusercontent.com",
+          "client_id": "1051090479106-l516tfgs1frs1qnibtjc0bal1ug3ov3e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.shopandcook",
+            "package_name": "com.johnmagdalinos.android.shopandcook.paid",
             "certificate_hash": "59ccd93d665fa4b871411cd9234de7648fca873f"
           }
         },
@@ -52,61 +52,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1051090479106:android:1e38f880cc19e991",
+        "mobilesdk_app_id": "1:1051090479106:android:e4ec5d2cb01011db",
         "android_client_info": {
-          "package_name": "com.example.android.shopandcook.paid"
+          "package_name": "com.johnmagdalinos.android.shopandcook.free"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1051090479106-toja86d7kdj2m9gqfdud5pgoa9q2l0vv.apps.googleusercontent.com",
+          "client_id": "1051090479106-7o6if5t1g0n6eq00dh77e0919mgtkka3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.shopandcook.paid",
-            "certificate_hash": "59ccd93d665fa4b871411cd9234de7648fca873f"
-          }
-        },
-        {
-          "client_id": "1051090479106-c0nd3uukb7j9bt2bm41u2c03ea73o1fr.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDlFuBCBpoSjp1RYdbSxbDmAqtAJ9dsurI"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1051090479106-c0nd3uukb7j9bt2bm41u2c03ea73o1fr.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1051090479106:android:4db2d1b24e761507",
-        "android_client_info": {
-          "package_name": "com.example.android.shopandcook.free"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1051090479106-n27lm3ro0bkqc129lbpu5rrfpehcms48.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.android.shopandcook.free",
+            "package_name": "com.johnmagdalinos.android.shopandcook.free",
             "certificate_hash": "59ccd93d665fa4b871411cd9234de7648fca873f"
           }
         },

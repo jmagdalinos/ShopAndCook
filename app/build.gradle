@@ -11,7 +11,7 @@ android {
     }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.android.shopandcook"
+        applicationId "com.johnmagdalinos.android.shopandcook"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1

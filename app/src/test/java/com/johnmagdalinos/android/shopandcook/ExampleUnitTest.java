@@ -1,4 +1,4 @@
-package com.example.android.shopandcook;
+package com.johnmagdalinos.android.shopandcook;
 
 import org.junit.Test;
 
