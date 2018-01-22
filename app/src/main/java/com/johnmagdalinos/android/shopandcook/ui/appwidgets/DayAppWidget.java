@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.example.android.shopandcook.ui.appwidgets;
+package com.johnmagdalinos.android.shopandcook.ui.appwidgets;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -22,8 +22,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import com.example.android.shopandcook.model.Day;
-import com.example.android.shopandcook.utilities.Constants;
+import com.johnmagdalinos.android.shopandcook.model.Day;
+import com.johnmagdalinos.android.shopandcook.utilities.Constants;
 
 import java.util.ArrayList;
 

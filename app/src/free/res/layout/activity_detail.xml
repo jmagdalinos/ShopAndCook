@@ -21,7 +21,7 @@
     android:id="@+id/cl_fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.shopandcook.ui.MainActivity">
+    tools:context="com.johnmagdalinos.android.shopandcook.ui.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/cl_fragment_detail"

@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.example.android.shopandcook.ui.appwidgets;
+package com.johnmagdalinos.android.shopandcook.ui.appwidgets;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -25,12 +25,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.RemoteViews;
 
-import com.example.android.shopandcook.R;
-import com.example.android.shopandcook.model.Day;
-import com.example.android.shopandcook.model.Ingredient;
-import com.example.android.shopandcook.ui.DetailActivity;
-import com.example.android.shopandcook.ui.MainActivity;
-import com.example.android.shopandcook.utilities.Constants;
+import com.johnmagdalinos.android.shopandcook.R;
+import com.johnmagdalinos.android.shopandcook.model.Day;
+import com.johnmagdalinos.android.shopandcook.model.Ingredient;
+import com.johnmagdalinos.android.shopandcook.ui.DetailActivity;
+import com.johnmagdalinos.android.shopandcook.ui.MainActivity;
+import com.johnmagdalinos.android.shopandcook.utilities.Constants;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

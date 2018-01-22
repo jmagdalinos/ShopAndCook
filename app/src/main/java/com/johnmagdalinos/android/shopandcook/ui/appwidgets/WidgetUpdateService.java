@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.example.android.shopandcook.ui.appwidgets;
+package com.johnmagdalinos.android.shopandcook.ui.appwidgets;
 
 import android.annotation.TargetApi;
 import android.app.IntentService;
@@ -28,7 +28,7 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
-import com.example.android.shopandcook.utilities.Constants;
+import com.johnmagdalinos.android.shopandcook.utilities.Constants;
 
 /**
  * IntentService called to update each of the widgets

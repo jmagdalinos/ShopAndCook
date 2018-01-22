@@ -1,4 +1,4 @@
-package com.example.android.shopandcook;
+package com.johnmagdalinos.android.shopandcook;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

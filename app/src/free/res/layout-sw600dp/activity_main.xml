@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:context="com.example.android.shopandcook.ui.MainActivity"/>
+            tools:context="com.johnmagdalinos.android.shopandcook.ui.MainActivity"/>
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"

@@ -19,7 +19,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.android.shopandcook.ui.fragments.DayFragment">
+    tools:context="com.johnmagdalinos.android.shopandcook.ui.fragments.DayFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
