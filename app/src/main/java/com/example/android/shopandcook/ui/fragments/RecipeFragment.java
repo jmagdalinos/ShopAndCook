@@ -306,7 +306,11 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
                 String key = dataSnapshot.getKey();
                 mCurrentRecipe.setRecipeId(key);
 
-                prepareViewsForViewing();
+                if (mViewingMode) {
+                    prepareViewsForViewing();
+                } else {
+                    prepareViewsForEditing();
+                }
             }
 
             @Override
@@ -456,7 +460,7 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
         mDescriptionEditText.setFocusable(false);
         mDescriptionEditText.getBackground().setColorFilter(ContextCompat.getColor(mActivity, android.R.color.transparent), PorterDuff.Mode.SRC_IN);
         mAddIngredientBtnLayout.setVisibility(View.GONE);
-        mPrepTimeBtn.setVisibility(View.GONE);
+        mPrepTimeBtn.setVisibility(View.INVISIBLE);
 
         // Set the text on the Text Views & EditTexts
         mNameEditText.setText(mCurrentRecipe.getName());
@@ -492,6 +496,7 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
         mTagsEditText.getBackground().clearColorFilter();
 
         mAddIngredientBtnLayout.setVisibility(View.VISIBLE);
+        mPrepTextView.setText(String.valueOf(Recipe.minToTime(mCurrentRecipe.getPrepTime())));
         mPrepTimeBtn.setVisibility(View.VISIBLE);
     }
 
@@ -639,8 +644,7 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
                 android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
                 // Show the edit ingredient dialog to add an ingredient
                 EditIngredientDialogFragment fragment = EditIngredientDialogFragment.newInstance
-                        (mUId, ingredient, true,
-                        mCurrentRecipe.getRecipeId());
+                        (mUId, ingredient, true, mCurrentRecipe.getRecipeId());
                 fragment.show(fragmentManager, null);
                 break;
             case R.id.ll_recipe_btn_url:
@@ -649,11 +653,11 @@ public class RecipeFragment extends android.support.v4.app.Fragment implements
                 startActivity(browserIntent);
                 break;
             case R.id.btn_recipe_prep:
-                if (!mViewingMode) {
-                    DialogFragment newFragment = TimePickerFragment.newInstance(mCurrentRecipe, mUId);
-                    // Show the dialog to set the prep time
-                    newFragment.show(getActivity().getSupportFragmentManager(), "timePicker");
-                }
+                android.support.v4.app.FragmentManager timeFragmentManager =
+                        getFragmentManager();
+                DialogFragment newFragment = TimePickerFragment.newInstance(mCurrentRecipe, mUId);
+                // Show the dialog to set the prep time
+                newFragment.show(timeFragmentManager, null);
                 break;
             default:
                 break;

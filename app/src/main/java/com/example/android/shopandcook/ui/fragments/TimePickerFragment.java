@@ -19,7 +19,6 @@ package com.example.android.shopandcook.ui.fragments;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.widget.TimePicker;
 
 import com.example.android.shopandcook.model.Recipe;
@@ -31,7 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * Time picker used to set the prep time for a recipe
  */
 
-public class TimePickerFragment extends DialogFragment
+public class TimePickerFragment extends android.support.v4.app.DialogFragment
         implements TimePickerDialog.OnTimeSetListener {
 
     /** Member variables */
@@ -57,12 +56,12 @@ public class TimePickerFragment extends DialogFragment
         long time = mCurrentRecipe.getPrepTime();
         int hours = (int) time / 60;
         int minutes = (int) time % 60;
+
         return new TimePickerDialog(getActivity(), this, hours, minutes, true);
     }
 
     /** Called when the user sets the time */
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
         long time = (long) hourOfDay * 60 + minute;
         String recipeId = mCurrentRecipe.getRecipeId();
 
@@ -77,3 +76,4 @@ public class TimePickerFragment extends DialogFragment
         ref.setValue(time);
     }
 }
+
