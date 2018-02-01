@@ -107,6 +107,9 @@ public class MainActivity extends AppCompatActivity implements
         mMainFragmentManager = getFragmentManager();
         mDetailFragmentManager = getSupportFragmentManager();
 
+        // Enable offline capabilities for the database
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
         // Initialize Firebase authentication
         mFirebaseAuth = FirebaseAuth.getInstance();
 
