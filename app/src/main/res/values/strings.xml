@@ -1,12 +1,29 @@
 <resources>
     <string name="app_name">Shop &amp; Cook</string>
 
+    <!-- Tutorial Titles -->
+    <string name="tutorial_welcome_title">Welcome!</string>
+    <string name="tutorial_welcome"> Shop &amp; Cook helps you organize your groceries and
+        meals!\n\n
+     Using more than one device? Don\'t worry! All your data is synced between them!</string>
+    <string name="tutorial_shopping_list">You can add, edit and remove items from your shopping 
+        list, sort it by name or by color or clear it.</string>
+    <string name="tutorial_meal_planner">Click a time of day to add, remove or change a meal.\n\n
+        You can also add all the ingredients from a day\'s or a week\'s meals to the shopping
+        list!</string>
+    <string name="tutorial_recipes">Save your favourite recipes! \n\n You can also add tags in
+        order to find a recipe easily!</string>
+    <string name="tutorial_meals">Group recipes together in meals. Meals can be used in your day
+        planner. Ingredients are then calculated for your meal\'s servings!</string>
+    <string name="tutorial_recipe_ideas">Got stuck? No problem! With the premium version, you can look up the best recipes from food2fork!</string>
+    <string name="tutorial_skip">SKIP</string>
+
     <!-- Main Activity Titles -->
     <string name="main_shopping_list">Shopping List</string>
     <string name="main_meal_planner">Meal Planner</string>
     <string name="main_recipes">Recipes</string>
     <string name="main_meals">Meals</string>
-    <string name="main_recipe_ideas">Recipe Ideas!</string>
+    <string name="main_recipe_ideas">Recipe Ideas</string>
     <string name="main_sign_out">Sign out</string>
 
     <!--Ingredient List Header -->

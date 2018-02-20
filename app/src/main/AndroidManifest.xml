@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.johnmagdalinos.android.shopandcook.ui.MainActivity"
+
+        <activity android:name=".ui.TutorialActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,34 +20,38 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.johnmagdalinos.android.shopandcook.ui.DetailActivity"
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name=".ui.DetailActivity"
             android:launchMode="singleTop"
-            android:parentActivityName="com.johnmagdalinos.android.shopandcook.ui.MainActivity"
-            android:theme="@style/AppTheme.detail">
+            android:parentActivityName=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>
         </activity>
 
-        <service android:name="com.johnmagdalinos.android.shopandcook.utilities.RecipeIntentService"/>
+        <service android:name=".utilities.RecipeIntentService"/>
         <service
-            android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.ShoppingListWidgetService"
+            android:name=".ui.appwidgets.ShoppingListWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
-        <service android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.WidgetUpdateService"/>
+        <service android:name=".ui.appwidgets.WidgetUpdateService"/>
         <service
-            android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.DaysWidgetService"
+            android:name=".ui.appwidgets.DaysWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
         <service
-            android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.WeekWidgetService"
+            android:name=".ui.appwidgets.WeekWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
         <provider
-            android:name="com.johnmagdalinos.android.shopandcook.data.RecipeProvider"
+            android:name=".data.RecipeProvider"
             android:authorities="com.johnmagdalinos.android.shopandcook"
             android:exported="false"/>
 
-        <receiver android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.ShoppingListAppWidget">
+        <receiver android:name=".ui.appwidgets.ShoppingListAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -56,7 +60,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/shopping_list_app_widget_info"/>
         </receiver>
-        <receiver android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.DayAppWidget">
+        <receiver android:name=".ui.appwidgets.DayAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -65,7 +69,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/day_app_widget_info"/>
         </receiver>
-        <receiver android:name="com.johnmagdalinos.android.shopandcook.ui.appwidgets.WeekAppWidget">
+        <receiver android:name=".ui.appwidgets.WeekAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>

@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">Shop &amp; Cook</string>
 
+    <!-- Tutorial Titles -->
+    <string name="tutorial_welcome_title">Καλωσήρθατε!</string>
+    <string name="tutorial_welcome"> Το Shop &amp; Cook σας βοηθά να οργανώσεται τα ψώνια και
+        τα γεύματά σας!\n\n
+     Χρησιμοποιείτε περισσότερες από μια συσκευές; Κανένα πρόβλημα! Τα δεδομένα σας
+        συγχρονίζονται μεταξύ τους!</string>
+    <string name="tutorial_shopping_list"> Μπορείτε να προσθέσετε, να επεξεργαστείτε και να
+        αφαιρέσετε αντικέιμενα από τη λίστα με τα ψώνια σας ή να ταξινομήσετε τη λίστα αλφαβητικά
+        ή ανά χρώμα.</string>
+    <string name="tutorial_meal_planner">Πατήστε πάνω σε ένα γεύμα για να το προσθέσετε, να
+        το επεξεργαστείτε ή να το αλλάξετε.\n\n
+        Μπορείτε επίσης να προσθέσετε όλα τα συστατικά για τα γεύματα της ημέρας ή της εβδομάδας
+        στη λίστα με τα ψώνια!</string>
+    <string name="tutorial_recipes">Αποθηκεύστε τις αγαπημένες σας συνταγές!\n\n Μπορείτε
+        επίσης να προσθέσετε ετικέτες σε κάθε συνταγή ή γεύμα για να τις βρίσκετε πιο
+        εύκολα!</string>
+    <string name="tutorial_meals">Ομαδοποιήστε τις συνταγές σας σε γεύματα. Τα γεύματα μπορούν να
+        χρησιμοποιηθούν στο Πρόγραμμα Γευμάτων. Τα συστατικά τους υπολογίζονται βάση των μερίδων!
+    </string>
+    <string name="tutorial_recipe_ideas">Δεν ξέρετε τι να μαγειρέψετε; Κανένα πρόβλημα! Με την
+        πλήρη έκδοση της εφαρμογής, μπορείτε να βρείτε τις καλύτερες συνταγές από το food2fork!</string>
+    <string name="tutorial_skip">ΕΠΟΜΕΝΟ</string>
+
     <!-- Main Activity Titles -->
     <string name="main_shopping_list">Λίστα με τα ψώνια</string>
     <string name="main_meal_planner">Πρόγραμμα Γευμάτων</string>
@@ -16,7 +39,7 @@
     <string name="ingredient_list_header_notes">Σχόλια</string>
 
     <!-- Ingredient List Item -->
-    <string name="ingredient_list_item_hint_name">Κρεμμύδθα</string>
+    <string name="ingredient_list_item_hint_name">Κρεμμύδια</string>
     <string name="ingredient_list_item_hint_quantity">2</string>
     <string name="ingredient_list_item_hint_measure">kgs</string>
     <string name="ingredient_list_item_hint_comments">κομμένα</string>

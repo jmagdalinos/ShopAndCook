@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Tutorial Fragment -->
+    <dimen name="tutorial_margin_small">8dp</dimen>
+    <dimen name="tutorial_margin_medium">16dp</dimen>
+    <dimen name="tutorial_margin_large">64dp</dimen>
+    <dimen name="tutorial_div_margin_top">300dp</dimen>
+    <dimen name="tutorial_title_text_size">40sp</dimen>
+    <dimen name="tutorial_text_size">14sp</dimen>
+
     <!-- Toolbar dimensions -->
     <dimen name="toolbar_elevation">4dp</dimen>
 

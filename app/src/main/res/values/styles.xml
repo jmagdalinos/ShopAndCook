@@ -8,10 +8,6 @@
         <item name="android:windowBackground">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.detail" parent="AppTheme">
-
-    </style>
-
     <!-- Text style for the text in the Main Fragment CardsViews -->
     <style name="main_fragment_text">
         <item name="android:layout_gravity">bottom</item>
