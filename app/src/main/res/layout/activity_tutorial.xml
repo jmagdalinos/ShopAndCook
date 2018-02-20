@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.TutorialActivity"
+    android:padding="@dimen/tutorial_margin_medium">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tl_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        app:tabBackground="@drawable/dot_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        app:tabPaddingStart="@dimen/list_item_icon_margin"
+        android:paddingEnd="@dimen/list_item_icon_margin"/>
+
+    <TextView
+        android:id="@+id/tv_tutorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/tutorial_skip"/>
+</LinearLayout>
