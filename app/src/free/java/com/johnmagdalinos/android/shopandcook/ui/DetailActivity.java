@@ -54,7 +54,7 @@ public class DetailActivity extends AppCompatActivity implements
         mFragmentManager = getSupportFragmentManager();
 
         // Initialize the ad
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544/5224354917");
+        MobileAds.initialize(this, "ca-app-pub-2218636981314048~3547583102");
         AdView adView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);

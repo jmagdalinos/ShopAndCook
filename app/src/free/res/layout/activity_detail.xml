@@ -64,7 +64,7 @@
         ads:layout_constraintLeft_toLeftOf="parent"
         ads:layout_constraintRight_toRightOf="parent"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/5224354917">
+        ads:adUnitId="ca-app-pub-2218636981314048/1109122025">
     </com.google.android.gms.ads.AdView>
 
     <include
