@@ -24,7 +24,7 @@ import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,6 +43,11 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.johnmagdalinos.android.shopandcook.R;
 import com.johnmagdalinos.android.shopandcook.model.Ingredient;
 import com.johnmagdalinos.android.shopandcook.ui.DetailActivity;
@@ -50,11 +55,6 @@ import com.johnmagdalinos.android.shopandcook.ui.IngredientItemTouchHelper;
 import com.johnmagdalinos.android.shopandcook.ui.adapters.ShoppingListAdapter;
 import com.johnmagdalinos.android.shopandcook.ui.appwidgets.ShoppingListAppWidget;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -69,7 +69,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         ShoppingListAdapter.ShoppingListAdapterCallback {
 
     /** Member Variables */
-    private ConstraintLayout mConstraintLayout;
+    private CoordinatorLayout mSnackBarParent;
     private String mUId;
     private RecyclerView mShoppingListRecyclerView;
     private LinearLayout mNoDataLinearLayout;
@@ -120,7 +120,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
         mTempListItems = new ArrayList<>();
 
         // Get the Constraint Layout to be used in the SnackBar
-        mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
+        mSnackBarParent = getActivity().findViewById(R.id.cl_fragment_container);
         TextView nameTextView = viewRoot.findViewById(R.id.tv_shopping_list_name);
         TextView quantityTextView = viewRoot.findViewById(R.id
                 .tv_shopping_list_quantity);
@@ -540,7 +540,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
             mIsDeleted = true;
 
             // Show SnackBar with undo option
-            Snackbar snackbar = Snackbar.make(mConstraintLayout, getString(R.string
+            Snackbar snackbar = Snackbar.make(mSnackBarParent, getString(R.string
                     .snackbar_delete_meal),Snackbar.LENGTH_LONG);
             snackbar.setActionTextColor(ContextCompat.getColor(mContext, R.color
                     .snackBarTextColor));

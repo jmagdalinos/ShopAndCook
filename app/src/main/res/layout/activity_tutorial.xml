@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.TutorialActivity"
-    android:padding="@dimen/tutorial_margin_medium">
+    android:padding="@dimen/tutorial_margin_medium"
+    android:background="@color/recipeRowColor">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_tutorial"

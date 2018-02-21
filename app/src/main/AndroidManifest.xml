@@ -25,10 +25,12 @@
             android:name=".ui.MainActivity"
             android:launchMode="singleTop">
         </activity>
+
         <activity
             android:name=".ui.DetailActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".ui.MainActivity">
+            android:parentActivityName=".ui.MainActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
             </intent-filter>

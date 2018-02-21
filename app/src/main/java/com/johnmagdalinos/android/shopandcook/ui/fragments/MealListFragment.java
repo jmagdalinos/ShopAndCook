@@ -22,7 +22,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,6 +42,12 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.LinearLayout;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.johnmagdalinos.android.shopandcook.R;
 import com.johnmagdalinos.android.shopandcook.model.Meal;
 import com.johnmagdalinos.android.shopandcook.ui.DetailActivity;
@@ -49,12 +55,6 @@ import com.johnmagdalinos.android.shopandcook.ui.DividerItemDecoration;
 import com.johnmagdalinos.android.shopandcook.ui.MealItemTouchHelper;
 import com.johnmagdalinos.android.shopandcook.ui.adapters.MealListAdapter;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,7 +71,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
     /** Member Variables */
     private String mUId;
     private MealListAdapter mAdapter;
-    private ConstraintLayout mConstraintLayout;
+    private CoordinatorLayout mSnackBarParent;
     private RecyclerView mRecyclerView;
     private LinearLayout mNoDataLinearLayout;
     private LinearLayoutManager mLinearLayoutManager;
@@ -131,7 +131,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
         mUId = getArguments().getString(Constants.KEY_USER_ID);
 
         // Get the Constraint Layout to be used in the SnackBar
-        mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
+        mSnackBarParent = getActivity().findViewById(R.id.cl_fragment_container);
 
         // Get the LinearLayout for the "No Data" message
         mNoDataLinearLayout = viewRoot.findViewById(R.id.ll_recipe_meal_list_no_data);
@@ -453,7 +453,7 @@ public class MealListFragment extends android.support.v4.app.Fragment implements
             mIsDeleted = true;
 
             // Show SnackBar with undo option
-            Snackbar snackbar = Snackbar.make(mConstraintLayout, getString(R.string
+            Snackbar snackbar = Snackbar.make(mSnackBarParent, getString(R.string
                             .snackbar_delete_meal),Snackbar.LENGTH_LONG);
             snackbar.setActionTextColor(ContextCompat.getColor(getActivity(), R.color
                     .snackBarTextColor));

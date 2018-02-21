@@ -27,7 +27,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,6 +49,12 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.johnmagdalinos.android.shopandcook.R;
 import com.johnmagdalinos.android.shopandcook.data.RecipeContract.Recipes;
 import com.johnmagdalinos.android.shopandcook.model.Recipe;
@@ -59,12 +65,6 @@ import com.johnmagdalinos.android.shopandcook.ui.adapters.RecipeListAdapter;
 import com.johnmagdalinos.android.shopandcook.ui.adapters.RecipeListFromApiAdapter;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
 import com.johnmagdalinos.android.shopandcook.utilities.RecipeIntentService;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,7 +85,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
     private String mUId;
     private RecipeListFromApiAdapter mApiAdapter;
     private RecipeListAdapter mAdapter;
-    private ConstraintLayout mConstraintLayout;
+    private CoordinatorLayout mSnackBarParent;
     private RecyclerView mRecyclerView;
     private LinearLayout mNoDataLinearLayout;
     private TextView mTextView;
@@ -159,7 +159,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
         mUId = getArguments().getString(Constants.KEY_USER_ID);
 
         // Get the Constraint Layout to be used in the SnackBar
-        mConstraintLayout = getActivity().findViewById(R.id.cl_fragment_container);
+        mSnackBarParent = getActivity().findViewById(R.id.cl_fragment_container);
         mTextView = viewRoot.findViewById(R.id.tv_recipe_list);
         mProgressBar = viewRoot.findViewById(R.id.pb_recipe_list);
 
@@ -566,7 +566,7 @@ public class RecipeListFragment extends android.support.v4.app.Fragment implemen
             mIsDeleted = true;
 
             // Show SnackBar with undo option
-            Snackbar snackbar = Snackbar.make(mConstraintLayout, getString(R.string.snackbar_delete_recipe),
+            Snackbar snackbar = Snackbar.make(mSnackBarParent, getString(R.string.snackbar_delete_recipe),
                     Snackbar.LENGTH_LONG);
             snackbar.setActionTextColor(ContextCompat.getColor(getActivity(), R.color
                     .snackBarTextColor));

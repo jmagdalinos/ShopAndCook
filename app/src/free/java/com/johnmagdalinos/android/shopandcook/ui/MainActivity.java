@@ -32,6 +32,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.johnmagdalinos.android.shopandcook.R;
 import com.johnmagdalinos.android.shopandcook.model.Meal;
 import com.johnmagdalinos.android.shopandcook.model.Recipe;
@@ -48,15 +58,6 @@ import com.johnmagdalinos.android.shopandcook.ui.fragments.RecipeFragment;
 import com.johnmagdalinos.android.shopandcook.ui.fragments.RecipeListFragment;
 import com.johnmagdalinos.android.shopandcook.ui.fragments.ShoppingListFragment;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
-import com.firebase.ui.auth.AuthUI;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import java.util.Arrays;
 
