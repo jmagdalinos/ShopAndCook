@@ -225,25 +225,25 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
                 updateWidgets();
 
                 // Check if the list was sorted prior to the insertion
-                switch (mSortedBy) {
-                    case KEY_SORT_BY_NAME:
-                        // Reverse the sort boolean to perform a correct sorting
-                        mSortedByNameAsc = !mSortedByNameAsc;
-                        sortByName();
-                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
-                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
-                        }
-                        break;
-                    case KEY_SORT_BY_COLOR:
-                        // Reverse the sort boolean to perform a correct sorting
-                        mSortedByColorAsc = !mSortedByColorAsc;
-                        sortByColor();
-                        // Return to the previous position
-                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
-                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
-                        }
-                        break;
-                }
+//                switch (mSortedBy) {
+//                    case KEY_SORT_BY_NAME:
+//                        // Reverse the sort boolean to perform a correct sorting
+//                        mSortedByNameAsc = !mSortedByNameAsc;
+//                        sortByName();
+//                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+//                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+//                        }
+//                        break;
+//                    case KEY_SORT_BY_COLOR:
+//                        // Reverse the sort boolean to perform a correct sorting
+//                        mSortedByColorAsc = !mSortedByColorAsc;
+//                        sortByColor();
+//                        // Return to the previous position
+//                        if (mScrollPosition != RecyclerView.NO_POSITION && mScrollPosition < mTempListItems.size()) {
+//                            mLinearLayoutManager.scrollToPosition(mScrollPosition);
+//                        }
+//                        break;
+//                }
             }
 
             @Override
@@ -541,7 +541,7 @@ public class ShoppingListFragment extends android.support.v4.app.Fragment implem
 
             // Show SnackBar with undo option
             Snackbar snackbar = Snackbar.make(mSnackBarParent, getString(R.string
-                    .snackbar_delete_meal),Snackbar.LENGTH_LONG);
+                    .snackbar_delete_shopping_item),Snackbar.LENGTH_LONG);
             snackbar.setActionTextColor(ContextCompat.getColor(mContext, R.color
                     .snackBarTextColor));
             snackbar.setAction(getString(R.string.snackbar_undo), new View.OnClickListener() {

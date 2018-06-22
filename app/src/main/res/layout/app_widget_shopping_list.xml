@@ -18,6 +18,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/widget_margin">
+
+    <TextView
+        android:id="@+id/tv_app_widget_shopping_empty_view_uid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/widget_sign_in"
+        android:gravity="center"
+        android:textColor="@color/recipeTextColor"
+        android:background="@color/unCheckedBackground"/>
+
+    <TextView
+        android:id="@+id/tv_app_widget_shopping_empty_view_shopping_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/widget_empty_shopping_list"
+        android:gravity="center"
+        android:textColor="@color/recipeTextColor"
+        android:background="@color/unCheckedBackground"/>
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +46,7 @@
             android:id="@+id/tv_app_widget_shopping"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/shopping_list_title_padding"
             android:gravity="center"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
@@ -39,13 +58,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_app_widget_shopping_empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/widget_sign_in"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center"/>
 
 </FrameLayout>

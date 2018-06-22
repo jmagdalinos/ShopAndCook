@@ -114,6 +114,7 @@
     <string name="add_meal_name">Please add a meal name</string>
 
     <!-- SnackBar messages -->
+    <string name="snackbar_delete_shopping_item">1 shopping item deleted!</string>
     <string name="snackbar_delete_recipe">1 recipe deleted!</string>
     <string name="snackbar_delete_meal">1 meal deleted!</string>
     <string name="snackbar_undo">Undo</string>
@@ -201,6 +202,7 @@
     <!-- AppWidgets -->
     <string name="widget_day_no_meal">No meal set</string>
     <string name="widget_sign_in">No data. Please sign in</string>
+    <string name="widget_empty_shopping_list">The shopping list is empty!</string>
 
     <!-- Content Description -->
     <string name="content_description_border_up">Top border</string>

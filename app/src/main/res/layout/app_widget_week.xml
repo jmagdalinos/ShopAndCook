@@ -19,17 +19,19 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/widget_margin">
 
-    <GridView
-        android:id="@+id/app_widget_week"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="7"/>
-
     <TextView
         android:id="@+id/tv_app_widget_week_empty_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/widget_sign_in"/>
+        android:text="@string/widget_sign_in"
+        android:textColor="@color/recipeTextColor"
+        android:background="@color/unCheckedBackground"/>
+
+    <GridView
+        android:id="@+id/app_widget_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="7"/>
 </FrameLayout>

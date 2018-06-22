@@ -120,6 +120,7 @@
     <string name="add_meal_name">PΠαρακαλώ προσθέστε το όνομα του γεύματος</string>
 
     <!-- SnackBar messages -->
+    <string name="snackbar_delete_shopping_item">1 αντικείμενο διαγράφηκε!</string>
     <string name="snackbar_delete_recipe">1 συταγή διαγράφηκε!</string>
     <string name="snackbar_delete_meal">1 γεύμα διαγράφηκε!</string>
     <string name="snackbar_undo">Επαναφορά</string>
@@ -211,6 +212,7 @@
     <!-- AppWidgets -->
     <string name="widget_day_no_meal">Δεν έχει ορισθεί γεύμα</string>
     <string name="widget_sign_in">Δεν υπάρχουν δεδομένα. Παρακαλώ συνδεθείτε</string>
+    <string name="widget_empty_shopping_list">Η λίστα με τα ψώνια είναι άδεια!</string>
 
     <!-- Content Description -->
     <string name="content_description_border_up">Άνω διακοσμητικό περιθώριο</string>

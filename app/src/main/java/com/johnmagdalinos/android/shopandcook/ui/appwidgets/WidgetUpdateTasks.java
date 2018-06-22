@@ -25,17 +25,17 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.RemoteViews;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.johnmagdalinos.android.shopandcook.R;
 import com.johnmagdalinos.android.shopandcook.model.Day;
 import com.johnmagdalinos.android.shopandcook.model.Ingredient;
 import com.johnmagdalinos.android.shopandcook.ui.DetailActivity;
 import com.johnmagdalinos.android.shopandcook.ui.MainActivity;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,7 +49,6 @@ class WidgetUpdateTasks {
     /** Called to update the ShoppingList widget */
     public static void updateShoppingListWidget(Context context, Intent intent, String uId) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-
         // Create the remote views
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout
                 .app_widget_shopping_list);
@@ -81,13 +80,18 @@ class WidgetUpdateTasks {
 
             // Setup the empty view
             if (uId == null || TextUtils.isEmpty(uId)) {
-                views.setViewVisibility(R.id.tv_app_widget_shopping_empty_view, View.VISIBLE);
+                views.setViewVisibility(R.id.tv_app_widget_shopping_empty_view_uid, View.VISIBLE);
             } else {
-                views.setViewVisibility(R.id.tv_app_widget_shopping_empty_view, View.GONE);
+                views.setViewVisibility(R.id.tv_app_widget_shopping_empty_view_uid, View.GONE);
 
                 views.setOnClickPendingIntent(R.id.tv_app_widget_shopping, pendingIntent);
                 views.setPendingIntentTemplate(R.id.lv_app_widget_shopping, pendingIntent);
                 populateShoppingList(context, appWidgetManager, appWidgetId, views, uId);
+
+                if (ShoppingListAppWidget.mShoppingList ==
+                        null || ShoppingListAppWidget.mShoppingList.size() == 0) {
+                    views.setViewVisibility(R.id.tv_app_widget_shopping_empty_view_shopping_list, View.VISIBLE);
+                }
             }
         }
     }
@@ -126,7 +130,8 @@ class WidgetUpdateTasks {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, activityIntent, 0);
 
             // Setup the empty view
-            if (uId == null || TextUtils.isEmpty(uId)) {
+            if (uId == null || TextUtils.isEmpty(uId) || WeekAppWidget.mWeek == null ||
+                    WeekAppWidget.mWeek.size() == 0) {
                 views.setViewVisibility(R.id.tv_app_widget_day_empty_view, View.VISIBLE);
             } else {
                 views.setViewVisibility(R.id.tv_app_widget_day_empty_view, View.GONE);
@@ -171,7 +176,8 @@ class WidgetUpdateTasks {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, activityIntent, 0);
 
             // Setup the empty view
-            if (uId == null || TextUtils.isEmpty(uId)) {
+            if (uId == null || TextUtils.isEmpty(uId) || DayAppWidget.mDays == null ||
+                    DayAppWidget.mDays.size() == 0) {
                 views.setViewVisibility(R.id.tv_app_widget_week_empty_view, View.VISIBLE);
             } else {
                 views.setViewVisibility(R.id.tv_app_widget_week_empty_view, View.GONE);

@@ -94,6 +94,7 @@
 
     <!-- AppWidgets -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="shopping_list_title_padding">8dp</dimen>
     <dimen name="day_widget_title_padding_end">8dp</dimen>
     <dimen name="day_widget_title_padding_start">24dp</dimen>
     <dimen name="day_widget_divider_padding_start">20dp</dimen>

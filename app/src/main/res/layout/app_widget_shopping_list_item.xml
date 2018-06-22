@@ -39,6 +39,7 @@
         android:layout_marginEnd="@dimen/ingredient_list_item_text_margin"
         android:layout_marginStart="@dimen/ingredient_list_item_text_margin"
         android:textSize="@dimen/ingredient_list_item_text_size"
+        android:textColor="@color/recipeTextColor"
         tools:hint="@string/ingredient_list_item_hint_name"/>
 
     <TextView
@@ -48,6 +49,7 @@
         android:gravity="center"
         android:layout_marginEnd="@dimen/ingredient_list_item_text_margin"
         android:textSize="@dimen/ingredient_list_item_text_size"
+        android:textColor="@color/recipeTextColor"
         tools:hint="@string/ingredient_list_item_hint_quantity"/>
 
     <TextView
@@ -57,6 +59,7 @@
         android:layout_weight="2"
         android:layout_marginEnd="@dimen/ingredient_list_item_text_margin"
         android:textSize="@dimen/ingredient_list_item_text_size"
+        android:textColor="@color/recipeTextColor"
         android:hint="@string/ingredient_list_item_hint_measure"/>
 
 </LinearLayout>

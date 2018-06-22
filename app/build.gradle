@@ -17,7 +17,7 @@ android {
         versionCode 4
         versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resConfigs "auto"
+        resConfigs "en", "el"
     }
     flavorDimensions "standard"
     buildTypes {
