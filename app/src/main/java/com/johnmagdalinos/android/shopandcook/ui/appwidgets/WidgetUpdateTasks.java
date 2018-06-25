@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -48,6 +49,7 @@ class WidgetUpdateTasks {
 
     /** Called to update the ShoppingList widget */
     public static void updateShoppingListWidget(Context context, Intent intent, String uId) {
+        Log.v("cookWidget", "updateShoppingListWidget");
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         // Create the remote views
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout
@@ -70,6 +72,13 @@ class WidgetUpdateTasks {
                 activityIntent = new Intent(context, DetailActivity.class);
                 activityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             }
+
+            // TODO:
+            Intent refresh = new Intent(context, ShoppingListAppWidget.class);
+            refresh.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+            PendingIntent pendingRefresh = PendingIntent.getBroadcast(context, 0, refresh,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
+            views.setOnClickPendingIntent(R.id.btn_app_widget_shopping, pendingRefresh);
 
             // Set the data to differentiate this intent
             Uri uri = Uri.parse(Constants.EXTRAS_SHOPPING_LIST);
@@ -194,13 +203,15 @@ class WidgetUpdateTasks {
     int appWidgetId, final RemoteViews views, String uId) {
 
         // Get an instance of the database
+        // Enable offline capabilities for the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ingredientsRef = database.getReference()
+        if (database == null) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        }        DatabaseReference ingredientsRef = database.getReference()
                 .child(Constants.NODE_SHOPPING_LIST)
                 .child(uId);
 
-        // Add a listener to get all the database items
-        ingredientsRef.addValueEventListener(new ValueEventListener() {
+        ingredientsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<Ingredient> shoppingList = new ArrayList<>();
@@ -232,6 +243,47 @@ class WidgetUpdateTasks {
 
             }
         });
+        if (ShoppingListAppWidget.mShoppingList != null && ShoppingListAppWidget.mShoppingList
+                .size() != 0) {
+            Log.v("cookWidget", "Size : " + String.valueOf(ShoppingListAppWidget.mShoppingList
+                            .size()));
+        } else {
+            Log.v("cookWidget", "Size : unknown");
+        }
+
+        // Add a listener to get all the database items
+//        ingredientsRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                ArrayList<Ingredient> shoppingList = new ArrayList<>();
+//
+//                // Get each shopping list item
+//                for (DataSnapshot child : dataSnapshot.getChildren()) {
+//                    Ingredient ingredient = child.getValue(Ingredient.class);
+//                    shoppingList.add(ingredient);
+//                }
+//                shoppingList = sumIngredients(shoppingList);
+//
+//                // Sort the list
+//                Collections.sort(shoppingList, Ingredient.AscendingNameComparator);
+//
+//                // Pass the complete list to the widget
+//                ShoppingListAppWidget.mShoppingList = shoppingList;
+//
+//                // Set the remote adapter on the view
+//                Intent listIntent = new Intent(context, ShoppingListWidgetService.class);
+//                views.setRemoteAdapter(R.id.lv_app_widget_shopping, listIntent);
+//
+//                // Instruct the widget manager to update the widget
+//                appWidgetManager.updateAppWidget(appWidgetId, views);
+//                appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.lv_app_widget_shopping);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     /** Gets the meals for every day from the Firebase Database */

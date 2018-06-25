@@ -28,7 +28,7 @@ import com.johnmagdalinos.android.shopandcook.utilities.JSONUtilities;
 
 public class RecipeContract {
     /** App's content authority */
-    public static final String CONTENT_AUTHORITY = "com.example.android.shopandcook";
+    public static final String CONTENT_AUTHORITY = "com.johnmagdalinos.android.shopandcook";
 
     /** Base content Uri to enable contact with the content provider */
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://" +  CONTENT_AUTHORITY);

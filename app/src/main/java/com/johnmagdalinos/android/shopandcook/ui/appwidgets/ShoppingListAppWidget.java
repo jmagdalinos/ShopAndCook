@@ -21,6 +21,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 
 import com.johnmagdalinos.android.shopandcook.model.Ingredient;
 import com.johnmagdalinos.android.shopandcook.utilities.Constants;
@@ -33,15 +34,19 @@ import java.util.ArrayList;
 public class ShoppingListAppWidget extends AppWidgetProvider {
     /** Member variables */
     public static ArrayList<Ingredient> mShoppingList;
+    private static int[] test;
 
     /** Launch an IntentService to update the widget in the background */
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        Log.v("cookWidget", "onUpdate");
         // Launch the update service
         Intent updateIntent = new Intent(context.getApplicationContext(),
                 WidgetUpdateService.class);
         updateIntent.putExtra(Constants.WIDGET_NAME, Constants.WIDGET_SHOPPING_LIST);
         updateIntent.putExtra(Constants.KEY_EXTRAS, appWidgetIds);
+
+        test = appWidgetIds;
 
         if (Build.VERSION.SDK_INT >= 26) {
             context.startForegroundService(updateIntent);
@@ -58,5 +63,20 @@ public class ShoppingListAppWidget extends AppWidgetProvider {
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.v("cookWidget", "onReceive");
+        Intent updateIntent = new Intent(context.getApplicationContext(),
+                WidgetUpdateService.class);
+        updateIntent.putExtra(Constants.WIDGET_NAME, Constants.WIDGET_SHOPPING_LIST);
+        updateIntent.putExtra(Constants.KEY_EXTRAS, test);
+
+        if (Build.VERSION.SDK_INT >= 26) {
+            context.startForegroundService(updateIntent);
+        } else {
+            context.startService(updateIntent);
+        }        super.onReceive(context, intent);
     }
 }

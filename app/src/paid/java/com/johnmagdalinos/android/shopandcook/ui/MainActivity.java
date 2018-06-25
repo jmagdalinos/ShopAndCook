@@ -109,8 +109,10 @@ public class MainActivity extends AppCompatActivity implements
         mFirebaseAuth = FirebaseAuth.getInstance();
 
         // Enable offline capabilities for the database
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
+        if (FirebaseDatabase.getInstance() == null) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        }
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override

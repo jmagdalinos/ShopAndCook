@@ -53,6 +53,12 @@
             android:text="@string/main_shopping_list"
             android:textSize="@dimen/list_item_title_small"/>
 
+        <Button
+            android:id="@+id/btn_app_widget_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"/>
+
         <ListView
             android:id="@+id/lv_app_widget_shopping"
             android:layout_width="match_parent"
